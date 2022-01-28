@@ -17,6 +17,9 @@ module.exports = ({
 		WEBSITE_NAME: 'yUITemplate',
 		WEBSITE_DESCRIPTION: 'Template used for some Yearn\'s project',
 		PROJECT_GITHUB_URL: 'https://github.com/Major-Eth/yUITemplate',
+		USE_PRICES: true,
+		USE_PRICE_TRI_CRYPTO: false,
+		CG_IDS: ['yearn-finance'],
 		ALCHEMY_KEY: process.env.ALCHEMY_KEY
 	}
 });
