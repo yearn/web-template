@@ -15,9 +15,9 @@ export const toAddress = (address) => {
 	}
 };
 
-export function truncateAddress(address) {
+export function truncateHex(address, size) {
 	if (address !== undefined) {
-		return `${address.slice(0, 4)}...${address.slice(-4)}`;
+		return `${address.slice(0, size)}...${address.slice(-size)}`;
 	}
 	return '0x000...0000';
 }
@@ -34,9 +34,20 @@ export function	parseMarkdown(markdownText) {
 
 export const isObjectEmpty = (obj) => !obj || JSON.stringify(obj) === '{}';
 
+export const sum = (...args) => [...args, 0].reduce((a, b) => a + b);
+
+export const sortByKey = (arr, k, order = 1) => arr.concat().sort((a, b) => (a[k] > b[k]) ? order : ((a[k] < b[k]) ? -order : 0));
+
 export function	formatAmount(amount, decimals = 2) {
-	return (new Intl.NumberFormat('en-US', {minimumFractionDigits: 0, maximumFractionDigits: decimals}).format(amount));
+	let		locale = 'fr-FR';
+	if (typeof(navigator) !== 'undefined')
+		locale = navigator?.language || 'fr-FR';
+	return (new Intl.NumberFormat([locale, 'en-US'], {minimumFractionDigits: 0, maximumFractionDigits: decimals}).format(amount));
 }
+export function	formatDate(value) {
+	return (new Intl.DateTimeFormat('fr', {dateStyle: 'short', timeStyle: 'short', hourCycle: 'h24'}).format(value));
+}
+
 
 export async function newEthCallProvider(provider) {
 	const	ethcallProvider = new Provider();
