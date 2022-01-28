@@ -44,10 +44,11 @@ export function	formatAmount(amount, decimals = 2) {
 		locale = navigator?.language || 'fr-FR';
 	return (new Intl.NumberFormat([locale, 'en-US'], {minimumFractionDigits: 0, maximumFractionDigits: decimals}).format(amount));
 }
-export function	formatDate(value) {
-	return (new Intl.DateTimeFormat('fr', {dateStyle: 'short', timeStyle: 'short', hourCycle: 'h24'}).format(value));
+export function	formatDate(value, withDate = true) {
+	if (withDate)
+		return (new Intl.DateTimeFormat('fr', {dateStyle: 'short', timeStyle: 'short', hourCycle: 'h24'}).format(value));
+	return (new Intl.DateTimeFormat('fr', {dateStyle: 'short', hourCycle: 'h24'}).format(value));
 }
-
 
 export async function newEthCallProvider(provider) {
 	const	ethcallProvider = new Provider();

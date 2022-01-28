@@ -3,11 +3,12 @@ import	Head						from	'next/head';
 import	{DefaultSeo}				from	'next-seo';
 import	{ethers}					from	'ethers';
 import	{Web3ReactProvider}			from	'@web3-react/core';
-import	{NetworkContextApp}			from	'contexts/useNetwork';
+import	{BalancesContextApp}		from	'contexts/useBalances';
 import	{UIContextApp}				from	'contexts/useUI';
 import	{PricesContextApp}			from	'contexts/usePrices';
 import	{LocalizationContextApp}	from 	'contexts/useLocalization';
 import	{Web3ContextApp}			from	'contexts/useWeb3';
+import	Header						from	'components/StandardHeader';
 import	Footer						from	'components/StandardFooter';
 
 import	'tailwindcss/tailwind.css';
@@ -68,7 +69,8 @@ function	AppWrapper(props) {
 					site: '@iearnfinance',
 					cardType: 'summary_large_image',
 				}} />
-			<main id={'app'} className={'flex relative flex-col mx-auto mb-6 max-w-6xl md:flex-row'}>
+			<Header />
+			<main id={'app'} className={'flex relative flex-col mx-auto mb-0 max-w-6xl md:flex-row md:mb-6'}>
 				<Component
 					key={router.route}
 					element={props.element}
@@ -91,17 +93,17 @@ function	MyApp(props) {
 		<UIContextApp>
 			<Web3ReactProvider getLibrary={getLibrary}>
 				<Web3ContextApp>
-					<PricesContextApp>
-						<LocalizationContextApp router={props.router}>
-							<NetworkContextApp>
+					<BalancesContextApp>
+						<PricesContextApp>
+							<LocalizationContextApp router={props.router}>
 								<AppWrapper
 									Component={Component}
 									pageProps={pageProps}
 									element={props.element}
 									router={props.router} />
-							</NetworkContextApp>
-						</LocalizationContextApp>
-					</PricesContextApp>
+							</LocalizationContextApp>
+						</PricesContextApp>
+					</BalancesContextApp>
 				</Web3ContextApp>
 			</Web3ReactProvider>
 		</UIContextApp>

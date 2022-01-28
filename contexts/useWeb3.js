@@ -5,8 +5,8 @@ import	{useWeb3React}						from	'@web3-react/core';
 import	{InjectedConnector}					from	'@web3-react/injected-connector';
 import	{ConnectorEvent}					from	'@web3-react/types';
 import	{WalletConnectConnector}			from	'@web3-react/walletconnect-connector';
+import	ModalLogin							from	'components/ModalLogin';
 import	useLocalStorage						from	'hooks/useLocalStorage';
-import	useWindowInFocus					from	'hooks/useWindowInFocus';
 import	useDebounce							from	'hooks/useDebounce';
 import	{toAddress}							from	'utils';
 
@@ -33,10 +33,10 @@ export const Web3ContextApp = ({children}) => {
 	const	[chainID, set_chainID] = useLocalStorage('chainID', -1);
 	const	[lastWallet, set_lastWallet] = useLocalStorage('lastWallet', walletType.NONE);
 	const	[, set_nonce] = React.useState(0);
-	const	[disableAutoChainChange, set_disableAutoChainChange] = React.useState(false);
+	const	[disableAutoChainChange, set_disableAutoChainChange] = React.useState(true);
 	const	[disconnected, set_disconnected] = React.useState(false);
+	const	[modalLoginOpen, set_modalLoginOpen] = React.useState(false);
 	const	debouncedChainID = useDebounce(chainID, 500);
-	const	windowInFocus = useWindowInFocus();
 
 	const onUpdate = React.useCallback(async (update) => {
 		if (update.provider) {
@@ -104,10 +104,6 @@ export const Web3ContextApp = ({children}) => {
 			.catch(() => set_disableAutoChainChange(true));
 	}, [active, disableAutoChainChange, debouncedChainID, provider]);
 
-	React.useEffect(() => {
-		onSwitchChain();
-	}, [windowInFocus, onSwitchChain]);
-
 	/**************************************************************************
 	**	connect
 	**	What should we do when the user choose to connect it's wallet ?
@@ -173,18 +169,20 @@ export const Web3ContextApp = ({children}) => {
 			value={{
 				address,
 				ens,
-				connect,
-				deactivate,
-				onDesactivate,
 				disconnected,
-				walletType,
-				chainID: process.env.IS_TEST ? process.env.TESTED_NETWORK : chainID,
+				chainID,
 				onSwitchChain,
 				active: active && (chainID === 1 || chainID === 250 || chainID === 1337 || chainID === 31337),
 				provider,
 				getProvider,
+				openLoginModal: () => set_modalLoginOpen(true)
 			}}>
 			{children}
+			<ModalLogin
+				connect={connect}
+				walletType={walletType}
+				open={modalLoginOpen}
+				set_open={set_modalLoginOpen} />
 		</Web3Context.Provider>
 	);
 };
