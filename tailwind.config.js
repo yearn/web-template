@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
 	corePlugins: {
@@ -12,88 +12,43 @@ module.exports = {
 		],
 	},
 	theme: {
-		fontFamily: {
-			title: ['Roboto Slab', 'Roboto', 'serif'],
-			sans: ['Roboto', 'sans-serif'],
-			mono: ['IBM Plex Mono', 'monospace']
-		},
 		colors: {
-			red: colors.red,
-			white: colors.white,
-			black: colors.black,
-			slate: colors.slate,
-			yblue: '#1e67f9',
-			fadeWhite: '#F2F2F2',
-			ygray: {
-				'50': '#F5F5F5',
-				100: '#333333',
-				200: '#4F4F4F',
-				300: '#828282',
-				400: '#BDBDBD',
-				500: '#E0E0E0',
-				600: '#F2F2F2',
-				'700': '#2c3e50',
-				'900': '#363636',
-			},
-			dark: {
-				900: '#0f172a',
-				600: '#141e37',
-				500: '#1E1E1E',
-				400: '#21252E',
-				200: '#535353',
-				100: '#5d6e8f',
-				50: 'rgba(255,255,255,0.7)',
-				white: 'rgba(255,255,255,0.9)',
-			},
+			'dark-blue-1': '#001746',
+			'dark-blue-2': '#183672',
+			'dark-blue-3': '#012A7C',
+			'gray-blue-1': '#475570',
+			'gray-blue-2': '#7F8DA9',
+			'gray-blue-3': '#CED5E3',
+			'yearn-blue': '#0657F9',
+			'yearn-blue-light-1': '#C6D7F9',
+			'yearn-blue-light-2': '#E0EAFF',
+			'yearn-blue-dark': '#004ADF',
+			'white': '#FFFFFF',
+			'white-blue-1': '#F4F7FB',
+			'white-blue-2': '#F9FBFD',
 		},
 		extend: {
+			fontFamily: {
+				roboto: ['Roboto', ...defaultTheme.fontFamily.sans]
+			},
 			width: {
-				'64.5': '16.125rem',
-				'235.5': '58.875rem'
+				33: '8.25rem',
+				38: '9.5rem',
+				42: '10.5rem',
+				50: '12.5rem',
+				55: '13.75rem',
 			},
 			maxWidth: {
-				'64.5': '16.125rem',
-				'235.5': '58.875rem',
 				'xl': '552px',
 				'4xl': '904px',
 				'6xl': '1200px',
 			},
-			maxHeight: {
-				'max': '4000px',
-			},
-			lineHeight: {
-				'6xl': '64px',
-			},
 			fontSize: {
-				'sm': ['15px', '24px'],
-				'6xl': ['56px', '64px'],
+				'sm': ['12px', '16px'],
+				'base': ['16px', '24px'],
+				'lg': ['20px', '32px'],
+				'xl': ['24px', '32px'],
 			},
-			typography: () => ({
-				yblue: {
-					css: {
-						'a': {color: '#0657F9'},
-						'h1': {color: '#333333'},
-						'h2': {color: '#333333'},
-						'h3': {color: '#333333'},
-						'h4': {color: '#333333'},
-						'h5': {color: '#333333'},
-						'p': {color: '#333333'},
-						'--tw-prose-links': '#0657F9'
-					},
-				},
-				yblueDark: {
-					css: {
-						'a': {color: '#0657F9'},
-						'h1': {color: '#F2F2F2'},
-						'h2': {color: '#F2F2F2'},
-						'h3': {color: '#F2F2F2'},
-						'h4': {color: '#F2F2F2'},
-						'h5': {color: '#F2F2F2'},
-						'p': {color: '#F2F2F2'},
-						'--tw-prose-links': '#0657F9'
-					},
-				},
-			}),
 		},
 	},
 	plugins: [

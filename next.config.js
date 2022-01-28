@@ -16,6 +16,7 @@ module.exports = ({
 		WEBSITE_URI: 'https://template.major.tax/',
 		WEBSITE_NAME: 'yUITemplate',
 		WEBSITE_DESCRIPTION: 'Template used for some Yearn\'s project',
+		PROJECT_GITHUB_URL: 'https://github.com/Major-Eth/yUITemplate',
 		ALCHEMY_KEY: process.env.ALCHEMY_KEY
 	}
 });

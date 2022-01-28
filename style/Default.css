@@ -2,7 +2,7 @@
 
 html {
 	margin-left: calc(100vw - 100%);
-	background: #F2F2F2;
+	background: #F4F7FB;
 }
 html.dark {
 	margin-left: calc(100vw - 100%);
@@ -22,9 +22,28 @@ html.dark {
 
 
 .flex-center {
-  @apply justify-center items-center;
+	@apply justify-center items-center;
 }
 .text-start {
-  text-align: start;
-  text-align: left;
+	text-align: start;
+	text-align: left;
 }
+
+
+button {@apply cursor-pointer}
+button:disabled {@apply cursor-not-allowed}
+
+/* Size of buttons */
+.button-small {@apply w-33 px-2 py-1 rounded-sm text-base text-center transition-colors}
+.button-large {@apply w-55 px-2 py-2 rounded-sm text-base text-center transition-colors}
+
+/* Color style of buttons */
+.button-light {@apply text-yearn-blue bg-yearn-blue-light-2 hover:bg-yearn-blue-light-1}
+
+.button-filled {@apply font-bold text-white bg-yearn-blue hover:bg-yearn-blue-dark}
+.button-filled:disabled {@apply bg-white-blue-1 text-gray-blue-3 hover:bg-white-blue-1}
+
+.button-outline {@apply text-yearn-blue border border-yearn-blue hover:bg-yearn-blue-light-2}
+.button-outline:disabled {@apply text-gray-blue-3 border border-gray-blue-3 bg-opacity-0}
+
+.link {@apply hover:text-yearn-blue hover:underline transition-colors cursor-pointer}
