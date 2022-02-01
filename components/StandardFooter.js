@@ -5,7 +5,7 @@ import	IconGithub					from	'components/icons/IconGithub';
 import	IconDiscord					from	'components/icons/IconDiscord';
 import	IconMedium					from	'components/icons/IconMedium';
 
-function	Footer({children}) {
+function	Footer() {
 	return (
 		<footer className={'hidden flex-row items-center py-8 px-6 mx-auto w-full max-w-6xl bg-white-blue-1 md:flex'}>
 			<Link href={'/disclaimer'}>
@@ -20,9 +20,8 @@ function	Footer({children}) {
 			<a href={'https://github.com/yearn/yearn-security/blob/master/SECURITY.md'} target={'_blank'} className={'pr-6 text-gray-blue-1 link'} rel={'noreferrer'}>
 				{'Report a vulnerability'}
 			</a>
-			{children}
 
-			<div className={'px-3 text-gray-blue-1 hover:text-gray-blue-2 transition-colors cursor-pointer'}>
+			<div className={'px-3 ml-auto text-gray-blue-1 hover:text-gray-blue-2 transition-colors cursor-pointer'}>
 				<a href={'https://twitter.com/iearnfinance'} target={'_blank'} rel={'noreferrer'}><IconTwitter /></a>
 			</div>
 			<div className={'px-3 text-gray-blue-1 hover:text-gray-blue-2 transition-colors cursor-pointer'}>

@@ -32,11 +32,15 @@ module.exports = {
 				roboto: ['Roboto', ...defaultTheme.fontFamily.sans]
 			},
 			width: {
+				30: '7.5rem',
 				33: '8.25rem',
 				38: '9.5rem',
 				42: '10.5rem',
 				50: '12.5rem',
 				55: '13.75rem',
+			},
+			height: {
+				30: '7.5rem',
 			},
 			maxWidth: {
 				'xl': '552px',
@@ -48,6 +52,7 @@ module.exports = {
 				'base': ['16px', '24px'],
 				'lg': ['20px', '32px'],
 				'xl': ['24px', '32px'],
+				'4xl': ['40px', '56px'],
 			},
 		},
 	},

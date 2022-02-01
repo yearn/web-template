@@ -32,7 +32,9 @@ function	Header() {
 					<p className={'text-yearn-blue'}>{`YFI $ ${formatAmount(prices?.['yearn-finance']?.usd || 0, 2)}`}</p>
 					<p className={'text-yearn-blue'}>{`Balance: ${formatAmount(balancesOf?.[YFI_ADDRESS] || 0, 6)} YFI`}</p>
 					<a href={'https://cowswap.exchange/#/swap?outputCurrency=0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e'} target={'_blank'} rel={'noreferrer'}>
-						<button className={'button-small button-light'}>{'Buy YFI'}</button>
+						<button className={'button-small button-filled'}>
+							<p className={'font-normal'}>{'Buy YFI'}</p>
+						</button>
 					</a>
 					<button
 						onClick={() => {

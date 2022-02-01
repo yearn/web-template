@@ -1,19 +1,19 @@
 import	React					from	'react';
 import	Link					from	'next/link';
-import	IconChevron				from	'components/icons/IconChevron';
+import	IconCross				from	'components/icons/IconCross';
 
-function	Index() {
+function	DisclaimerPage() {
 	return (
 		<div className={'w-full'}>
-			<div className={'p-6'}>
-				<Link href={'/'}>
-					<div className={'pb-6'}>
-						<div className={'group flex flex-row items-center w-fit hover:text-yearn-blue transition-colors cursor-pointer'}>
-							<IconChevron />
-							<h3 className={'ml-4 text-base font-bold text-dark-blue-1 group-hover:text-yearn-blue transition-colors'}>{'Disclaimer'}</h3>
+			<div className={'p-6 bg-white'}>
+				<div className={'flex flex-row justify-between pb-6 w-full'}>
+					<h3 className={'text-base font-bold text-dark-blue-1 hover:text-yearn-blue transition-colors'}>{'Disclaimer'}</h3>
+					<Link href={'/'}>
+						<div>
+							<IconCross className={'w-6 h-6 text-gray-blue-2 cursor-pointer'} />
 						</div>
-					</div>
-				</Link>
+					</Link>
+				</div>
 				<div className={'text-justify'}>
 					<p className={'pb-6 text-dark-blue-1'}>
 						{'When used on this website, the terms “debt”, “lend”, “borrow”, “collateral”, “credit”, “leverage”, “bank”, “borrow”, “yield”, “invest” and other similar terms are not meant to be interpreted literally. Rather, such terms are being used to draw rough, fuzzy-logic analogies between the heavily automated and mostly deterministic operations of a decentralized-finance smart contract system and the discretionary performance of traditional-finance transactions by people.'}
@@ -55,9 +55,8 @@ function	Index() {
 					</p>
 				</div>
 			</div>
-
 		</div>
 	);
 }
 
-export default Index;
+export default DisclaimerPage;
