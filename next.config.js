@@ -13,7 +13,7 @@ module.exports = ({
 		],
 	},
 	env: {
-		WEBSITE_URI: 'https://template.major.tax/',
+		WEBSITE_URI: 'https://yearn-ui.major.tax/',
 		WEBSITE_NAME: 'yUITemplate',
 		WEBSITE_TITLE: 'Yearn UI Template',
 		WEBSITE_DESCRIPTION: 'Template used for some Yearn\'s project',
