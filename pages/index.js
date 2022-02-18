@@ -1,225 +1,151 @@
-import	React					from	'react';
+import	React		from	'react';
+import	Browser		from	'components/Browser';
 
-function	ColorPaletteDarkBlue() {
+
+function	ColorBox({title, color, hex, name}) {
 	return (
-		<div className={'mr-10 mb-10'}>
-			<div className={'mb-2'}>
-				<p className={'text-base font-bold text-dark-blue-1'}>{'Dark Blue'}</p>
+		<div className={'flex flex-col col-span-1'}>
+			{/* <p className={'text-sm text-dark-blue-1'}>{title}</p> */}
+			<div className={`overflow-hidden relative my-1 w-30 h-24 border border-gray-blue-3 ${color}`}>
+				{/* <div className={'absolute right-0 bottom-0 py-0.5 px-1 bg-white'}>
+					<p className={'text-sm font-bold text-dark-blue-1'}>{color.replace(/[^0-9]/g, '')}</p>
+				</div> */}
 			</div>
-			<div className={'grid grid-cols-3 gap-4'}>
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-dark-blue-1 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Dark Blue 1'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#001746'}</p>
-				</div>
+			<p className={'mt-1 text-sm text-gray-blue-2'}>{hex}</p>
+			{name ? <p className={'text-sm font-bold text-dark-blue-1'}>{name}</p> : <p className={'text-sm font-bold text-dark-blue-1'}>&nbsp;</p>}
+		</div>
+	);
+}
 
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-dark-blue-2 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Dark Blue 2'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#183672'}</p>
-				</div>
-
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-dark-blue-3 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Dark Blue 3'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#012A7C'}</p>
-				</div>
+function	ColorPaletteLight() {
+	return (
+		<div className={'mb-10 w-full'}>
+			<div className={'grid grid-cols-8 gap-4 gap-y-6 w-full'}>
+				<ColorBox color={'bg-light-background'} hex={'#F4F7FB'} name={'Background'} />
+				<ColorBox color={'bg-light-background-variant'} hex={'#E0EAFF'} name={'Background Variant'} />
+				<ColorBox color={'bg-light-surface'} hex={'#FFFFFF'} name={'Surface'} />
+				<ColorBox color={'bg-light-surface-variant'} hex={'#F9FBFD'} name={'Surface Variant'} />
+				<ColorBox color={'bg-light-primary'} hex={'#0657F9'} name={'Primary'} />
+				<ColorBox color={'bg-light-primary-variant'} hex={'#004ADF'} name={'Primary Variant'} />
+				<ColorBox color={'bg-light-secondary'} hex={'#E0EAFF'} name={'Secondary'} />
+				<div />
+				<ColorBox color={'bg-light-titles'} hex={'#001746'} name={'Titles'} />
+				<ColorBox color={'bg-light-titles-variant'} hex={'#0657F9'} name={'Titles Variant'} />
+				<ColorBox color={'bg-light-texts'} hex={'#7F8DA9'} name={'Texts'} />
+				<ColorBox color={'bg-light-icons'} hex={'#CED5E3'} name={'Icons'} />
+				<ColorBox color={'bg-light-icons-variant'} hex={'#475570'} name={'Icons-Variant'} />
 			</div>
 		</div>
 	);
 }
 
-function	ColorPaletteGrayBlue() {
+function	ColorPaletteDark() {
 	return (
-		<div className={'mr-10 mb-10'}>
-			<div className={'mb-2'}>
-				<p className={'text-base font-bold text-dark-blue-1'}>{'Gray Blue'}</p>
-			</div>
-			<div className={'grid grid-cols-3 gap-4'}>
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-gray-blue-1 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Dark Gray 1'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#475570'}</p>
-				</div>
-
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-gray-blue-2 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Dark Gray 1'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#7F8DA9'}</p>
-				</div>
-
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-gray-blue-3 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Dark Gray 1'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#CED5E3'}</p>
-				</div>
+		<div className={'mb-10 w-full'}>
+			<div className={'grid grid-cols-8 gap-4 gap-y-6 w-full'}>
+				<ColorBox color={'bg-dark-background'} hex={'#141414'} name={'Background'} />
+				<ColorBox color={'bg-dark-background-variant'} hex={'#272727'} name={'Background Variant'} />
+				<ColorBox color={'bg-dark-surface'} hex={'#000000'} name={'Surface'} />
+				<ColorBox color={'bg-dark-surface-variant'} hex={'#191919'} name={'Surface Variant'} />
+				<ColorBox color={'bg-dark-primary'} hex={'#FFFFFF'} name={'Primary'} />
+				<ColorBox color={'bg-dark-primary-variant'} hex={'#FFFFFF'} name={'Primary Variant'} />
+				<ColorBox color={'bg-dark-secondary'} hex={'#272727'} name={'Secondary'} />
+				<div />
+				<ColorBox color={'bg-dark-titles'} hex={'#FFFFFF'} name={'Titles'} />
+				<ColorBox color={'bg-dark-titles-variant'} hex={'#FFFFFF'} name={'Titles Variant'} />
+				<ColorBox color={'bg-dark-texts'} hex={'#A8A8A8'} name={'Texts'} />
+				<ColorBox color={'bg-dark-icons'} hex={'#A8A8A8'} name={'Icons'} />
+				<ColorBox color={'bg-dark-icons-variant'} hex={'#FFFFFF'} name={'Icons-Variant'} />
 			</div>
 		</div>
 	);
 }
 
-function	ColorPaletteYearnBlue() {
+
+function	ColorPaletteBlue() {
 	return (
-		<div className={'mr-10 mb-10'}>
-			<div className={'mb-2'}>
-				<p className={'text-base font-bold text-dark-blue-1'}>{'Yearn Blue'}</p>
-			</div>
-			<div className={'grid grid-cols-4 gap-4'}>
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-yearn-blue-dark rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Yearn Dark'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#004ADF'}</p>
-				</div>
-
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-yearn-blue rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Yearn Primary'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#0657F9'}</p>
-				</div>
-
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-yearn-blue-light-1 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Light Blue 1'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#C6D7F9'}</p>
-				</div>
-
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-yearn-blue-light-2 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Light Blue 2'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#E0EAFF'}</p>
-				</div>
+		<div className={'mb-10 w-full'}>
+			<div className={'grid grid-cols-8 gap-4 gap-y-6 w-full'}>
+				<ColorBox color={'bg-blue-background'} hex={'#012A7C'} name={'Background'} />
+				<ColorBox color={'bg-blue-background-variant'} hex={'#001E59'} name={'Background Variant'} />
+				<ColorBox color={'bg-blue-surface'} hex={'#001746'} name={'Surface'} />
+				<ColorBox color={'bg-blue-surface-variant'} hex={'#012A7C'} name={'Surface Variant'} />
+				<ColorBox color={'bg-blue-primary'} hex={'#0657F9'} name={'Primary'} />
+				<ColorBox color={'bg-blue-primary-variant'} hex={'#004ADF'} name={'Primary Variant'} />
+				<ColorBox color={'bg-blue-secondary'} hex={'#0657F9'} name={'Secondary'} />
+				<div />
+				<ColorBox color={'bg-blue-titles'} hex={'#FFFFFF'} name={'Titles'} />
+				<ColorBox color={'bg-blue-titles-variant'} hex={'#FFFFFF'} name={'Titles Variant'} />
+				<ColorBox color={'bg-blue-texts'} hex={'#7F8DA9'} name={'Texts'} />
+				<ColorBox color={'bg-blue-icons'} hex={'#7F8DA9'} name={'Icons'} />
+				<ColorBox color={'bg-blue-icons-variant'} hex={'#FFFFFF'} name={'Icons-Variant'} />
 			</div>
 		</div>
 	);
 }
 
-function	ColorPaletteYearnWhite() {
-	return (
-		<div className={'mr-10 mb-10'}>
-			<div className={'mb-2'}>
-				<p className={'text-base font-bold text-dark-blue-1'}>{'White'}</p>
+function	ThemeSection({theme}) {
+	if (theme === 'light') {
+		return (
+			<div className={''}>
+				<div className={'flex flex-wrap'}>
+					<ColorPaletteLight />
+				</div>
+				<Browser theme={theme} /> 
 			</div>
-			<div className={'grid grid-cols-3 gap-4'}>
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-white rounded-sm border border-gray-blue-3'} />
-					<p className={'text-sm text-dark-blue-1'}>{'Pure White'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#FFFFFF'}</p>
-				</div>
+		);
+	}
 
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-white-blue-1 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'White Blue 1'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#F4F7FB'}</p>
+	if (theme === 'dark') {
+		return (
+			<div className={''}>
+				<div className={'flex flex-wrap'}>
+					<ColorPaletteDark />
 				</div>
-
-				<div className={'flex flex-col col-span-1'}>
-					<div className={'mb-2 w-20 h-20 bg-white-blue-2 rounded-sm'} />
-					<p className={'text-sm text-dark-blue-1'}>{'White Blue 2'}</p>
-					<p className={'text-sm text-gray-blue-2'}>{'#F9FBFD'}</p>
-				</div>
+				<Browser theme={theme} /> 
 			</div>
-		</div>
-	);
+		);
+	}
+		
+	if (theme === 'blue') {
+		return (
+			<div className={''}>
+				<div className={'flex flex-wrap'}>
+					<ColorPaletteBlue />
+				</div>
+				<Browser theme={theme} /> 
+			</div>
+		);
+	}
+
+
 }
-
 
 function	Index() {
+	const	[theme, set_theme] = React.useState('light');
+
 	return (
 		<div className={'p-6 w-full bg-white'}>
-			<h1 className={'mb-14 text-4xl font-bold text-dark-blue-1'}>{'Design System'}</h1>
-			<div>
-				<div className={'flex flex-row items-center mb-8'}>
-					<div className={'mr-2 w-4 h-4 bg-yearn-blue rounded-sm'} />
-					<p className={'text-xl font-bold text-dark-blue-1'}>{'White theme Colors'}</p>
+			<div className={'flex flex-row justify-between mb-8'}>
+				<div className={'flex flex-row items-center'}>
+					<div className={'mr-4 w-4 h-4 bg-yearn-blue rounded-sm'} />
+					<h1 className={'text-4xl font-bold text-dark-blue-1'}>{'Yearn Theme System'}</h1>
 				</div>
-				<div className={'pl-6'}>
-					<div className={'mb-4'}>
-						<p className={'text-lg font-bold text-dark-blue-1'}>{'Blue Palette'}</p>
-					</div>
-					<div className={'flex flex-wrap'}>
-						<ColorPaletteDarkBlue />
-						<ColorPaletteGrayBlue />
-						<ColorPaletteYearnBlue />
-						<ColorPaletteYearnWhite />
-					</div>
+				<div>
+					<select
+						onChange={e => set_theme(e.target.value)}
+						className={'relative py-1 w-33 text-light-primary-variant bg-light-secondary rounded-md border-none focus:border-none outline-none focus:outline-none ring-0 focus:ring-0 cursor-pointer'}>
+						<option value={'light'}>{'Light'}</option>
+						<option value={'dark'}>{'Dark'}</option>
+						<option value={'blue'}>{'Blue'}</option>
+					</select>
 				</div>
 			</div>
-
-			<div>
-				<div className={'flex flex-row items-center mb-8'}>
-					<div className={'mr-2 w-4 h-4 bg-yearn-blue rounded-sm'} />
-					<p className={'text-xl font-bold text-dark-blue-1'}>{'Fonts'}</p>
-				</div>
-				<div className={'pl-6'}>
-					<div className={'grid grid-cols-5 gap-10 mb-10'}>
-						<div className={'flex flex-col col-span-1'}>
-							<h3 className={'flex items-center mb-2 h-8 text-xl font-bold text-dark-blue-1'}>{'H3 Bold'}</h3>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Bold'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 24px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 32px'}</p>
-						</div>
-						<div className={'flex flex-col col-span-1'}>
-							<h2 className={'flex items-center mb-2 h-8 text-lg font-bold text-dark-blue-1'}>{'H2 Bold'}</h2>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Bold'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 20px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 32px'}</p>
-						</div>
-						<div className={'flex flex-col col-span-1'}>
-							<h3 className={'flex items-center mb-2 h-8 text-base font-bold text-dark-blue-1'}>{'H3 Bold'}</h3>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Bold'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 16px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 24px'}</p>
-						</div>
-						<div className={'flex flex-col col-span-1'}>
-							<p className={'flex items-center mb-2 h-8 text-base font-normal text-dark-blue-1'}>{'Body Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 16px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 24px'}</p>
-						</div>
-						<div className={'flex flex-col col-span-1'}>
-							<p className={'flex items-center mb-2 h-8 text-sm font-bold text-dark-blue-1'}>{'Caption Bold'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Bold'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 12px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 16px'}</p>
-						</div>
-					</div>
-
-					<div className={'grid grid-cols-5 gap-10'}>
-						<div className={'flex flex-col col-span-1'}>
-							<h3 className={'flex items-center mb-2 h-8 text-xl font-normal text-dark-blue-1'}>{'H3 Regular'}</h3>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 24px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 32px'}</p>
-						</div>
-						<div className={'flex flex-col col-span-1'}>
-							<h2 className={'flex items-center mb-2 h-8 text-lg font-normal text-dark-blue-1'}>{'H2 Regular'}</h2>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 20px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 32px'}</p>
-						</div>
-						<div className={'flex flex-col col-span-1'}>
-							<h3 className={'flex items-center mb-2 h-8 text-base font-normal text-dark-blue-1'}>{'H3 Regular'}</h3>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 16px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 24px'}</p>
-						</div>
-						<div className={'flex flex-col col-span-1'}>
-							<p className={'flex items-center mb-2 h-8 text-base font-normal text-dark-blue-1'}>{'Body Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 16px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 24px'}</p>
-						</div>
-						<div className={'flex flex-col col-span-1'}>
-							<p className={'flex items-center mb-2 h-8 text-sm font-normal text-dark-blue-1'}>{'Caption Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Roboto Regular'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Size: 12px'}</p>
-							<p className={'text-sm text-gray-blue-2'}>{'Line Height: 16px'}</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			<ThemeSection theme={theme} />
 		</div>
 	);
 }
+// className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+
 
 export default Index;
