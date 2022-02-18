@@ -2,15 +2,10 @@ import	React		from	'react';
 import	Browser		from	'components/Browser';
 
 
-function	ColorBox({title, color, hex, name}) {
+function	ColorBox({color, hex, name}) {
 	return (
 		<div className={'flex flex-col col-span-1'}>
-			{/* <p className={'text-sm text-dark-blue-1'}>{title}</p> */}
-			<div className={`overflow-hidden relative my-1 w-30 h-24 border border-gray-blue-3 ${color}`}>
-				{/* <div className={'absolute right-0 bottom-0 py-0.5 px-1 bg-white'}>
-					<p className={'text-sm font-bold text-dark-blue-1'}>{color.replace(/[^0-9]/g, '')}</p>
-				</div> */}
-			</div>
+			<div className={`overflow-hidden relative my-1 w-30 h-24 border border-gray-blue-3 ${color}`} />
 			<p className={'mt-1 text-sm text-gray-blue-2'}>{hex}</p>
 			{name ? <p className={'text-sm font-bold text-dark-blue-1'}>{name}</p> : <p className={'text-sm font-bold text-dark-blue-1'}>&nbsp;</p>}
 		</div>
