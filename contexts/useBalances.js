@@ -54,7 +54,9 @@ export const BalancesContextApp = ({children}) => {
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [active, address, chainID, provider]);
-	React.useEffect(() => retrieveBalances(), [retrieveBalances]);
+	React.useEffect(() => {
+		retrieveBalances();
+	}, [retrieveBalances]);
 
 	return (
 		<BalancesContext.Provider value={{balancesOf}}>

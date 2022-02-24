@@ -6,6 +6,9 @@ module.exports = ({
 		defaultLocale: 'en',
 		localeDetection: false
 	},
+	experimental: {
+		concurrentFeatures: true,
+	},
 	plugins: [new Dotenv()],
 	images: {
 		domains: [

@@ -1,5 +1,5 @@
 import	React			from	'react';
-import	Image			from	'next/image';
+import	Token			from	'@yearn/yearn-web-tokens';
 import	ReactTooltip	from	'react-tooltip';
 import	IconChevron		from	'components/icons/IconChevron';
 
@@ -50,11 +50,15 @@ function	MainFakeBrowser({theme = 'dark'}) {
 								data-for={`${theme}-background`} data-tip={'background: background'} data-class={'z-20'}
 								className={`p-4 bg-${theme}-background rounded flex flex-row items-center z-20 relative`}>
 								<div className={'mr-4'}>
-									<Image src={'/DAI.png'} width={48} height={48} />
+									<Token
+										width={48}
+										height={48}
+										address={'0x6B175474E89094C44Da98b954EedeAC495271d0F'}
+										chainID={'1'} />
 								</div>
 								<div>
 									<p
-										data-for={`${theme}-texts`} data-tip={'background: texts'}
+										data-for={`${theme}-texts`} data-tip={'color: texts'}
 										className={`mb-1 text-xs text-${theme}-texts`}>
 										{'yvDAI'}
 									</p>
@@ -72,11 +76,15 @@ function	MainFakeBrowser({theme = 'dark'}) {
 								data-for={`${theme}-background`} data-tip={'background: background'} data-class={'z-20'}
 								className={`p-4 bg-${theme}-background rounded flex flex-row items-center z-20`}>
 								<div className={'mr-4'}>
-									<Image src={'/ETH.png'} width={48} height={48} />
+									<Token
+										width={48}
+										height={48}
+										address={'0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'}
+										chainID={'1'} />
 								</div>
 								<div>
 									<p
-										data-for={`${theme}-texts`} data-tip={'background: texts'}
+										data-for={`${theme}-texts`} data-tip={'color: texts'}
 										className={`mb-1 text-xs text-${theme}-texts`}>
 										{'yvETH'}
 									</p>
@@ -94,11 +102,15 @@ function	MainFakeBrowser({theme = 'dark'}) {
 								data-for={`${theme}-background`} data-tip={'background: background'} data-class={'z-20'}
 								className={`p-4 bg-${theme}-background rounded flex flex-row items-center z-20`}>
 								<div className={'mr-4'}>
-									<Image src={'/USDT.png'} width={48} height={48} />
+									<Token
+										width={48}
+										height={48}
+										address={'0xdAC17F958D2ee523a2206206994597C13D831ec7'}
+										chainID={'1'} />
 								</div>
 								<div>
 									<p
-										data-for={`${theme}-texts`} data-tip={'background: texts'}
+										data-for={`${theme}-texts`} data-tip={'color: texts'}
 										className={`mb-1 text-xs text-${theme}-texts`}>
 										{'yvUSDT'}
 									</p>

@@ -1,7 +1,6 @@
 import	React		from	'react';
 import	Browser		from	'components/Browser';
 
-
 function	ColorBox({color, hex, name}) {
 	return (
 		<div className={'flex flex-col col-span-1'}>
@@ -112,8 +111,6 @@ function	ThemeSection({theme}) {
 			</div>
 		);
 	}
-
-
 }
 
 function	Index() {
