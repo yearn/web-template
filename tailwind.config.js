@@ -10,123 +10,121 @@ module.exports = {
 		'./components/**/*.js'
 	],
 	safelist: [
-		'bg-dark-background',
-		'bg-dark-background-variant',
-		'bg-dark-secondary',
-		'text-dark-primary',
-		'bg-dark-surface',
-		'text-dark-icons',
-		'text-dark-icons-variant',
-		'text-dark-texts',
-		'text-dark-titles',
-		'text-dark-titles-variant',
-		'border-dark-primary',
-
-		'bg-light-background',
-		'bg-light-background-variant',
-		'bg-light-secondary',
-		'text-light-primary',
-		'bg-light-surface',
-		'text-light-icons',
-		'text-light-icons-variant',
-		'text-light-texts',
-		'text-light-titles',
-		'text-light-titles-variant',
-		'border-light-primary',
-
-		'bg-blue-background',
-		'bg-blue-background-variant',
-		'bg-blue-secondary',
-		'text-blue-primary',
-		'bg-blue-surface',
-		'text-blue-icons',
-		'text-blue-icons-variant',
-		'text-blue-texts',
-		'text-blue-titles',
-		'text-blue-titles-variant',
-		'border-blue-primary',
+		{
+			pattern: /(text|bg|border)-(dark|blue|light)-(background|backgroundVariant|surface|surfaceVariant|primary|primaryVariant|secondary|titles|titlesVariant|texts|icons|iconsVariant|disabled)/,
+			variants: ['hover'],
+		},
+		{
+			pattern: /(text|bg|border)-(dark|blue|light)-(button)-(filled|outlined|disabled)-(primary|variant|text|disabled|disabled-text)/,
+			variants: ['hover'],
+		},
+		{
+			pattern: /(text|bg|border)-(dark|blue|light)-(icons)-(primary|variant)/,
+			variants: ['hover'],
+		},
 	],
 	theme: {
 		colors: {
 			'light': {
-				// 900: '#001746', //Titles
-				// 800: '#183672',
-				// 700: '#012A7C',
-
-				600: '#004ADF', //Primary-Variant
-				500: '#0657F9', //Primary
-				// 400: '#C6D7F9',
-				300: '#E0EAFF', //Secondary
-				200: '#F4F7FB', //Background
-				100: '#F9FBFD', //Surface-Variant
-				50: '#FFFFFF', //Surface
-
-				'background': '#F4F7FB',
-				'background-variant': '#E0EAFF',
-				'surface': '#FFFFFF',
-				'surface-variant': '#F9FBFD',
-				'primary': '#0657F9',
-				'primary-variant': '#004ADF',
-				'secondary': '#E0EAFF',
-				'titles': '#001746',
-				'titles-variant': '#0657F9',
-				'texts': '#7F8DA9',
-				'icons': '#CED5E3',
-				'icons-variant': '#475570',
+				background: '#F4F7FB',
+				backgroundVariant: '#E0EAFF',
+				surface: '#FFFFFF',
+				surfaceVariant: '#F9FBFD',
+				primary: '#0657F9',
+				primaryVariant: '#004ADF',
+				secondary: '#E0EAFF',
+				titles: '#001746',
+				titlesVariant: '#0657F9',
+				texts: '#7F8DA9',
+				disabled: '#CED5E3',
+				icons: {
+					primary: '#CED5E3',
+					variant: '#475570'
+				},
+				button: {
+					filled: {
+						primary: '#0657F9',
+						variant: '#004ADF',
+						text: '#FFFFFF',
+					},
+					outlined: {
+						primary: '#FFFFFF',
+						variant: '#E0EAFF',
+						text: '#0657F9',
+					},
+					disabled: {
+						primary: '#F4F7FB',
+						text: '#CED5E3',
+					}
+				}
 			},
 
 			'dark': {
-				// 900: '#FFFFFF',
-				// 800: '#FE0000',
-				// 700: '#FE0000',
-
-				600: '#FFFFFF',
-				500: '#FFFFFF', //Primary
-				// 400: '#272727',
-				300: '#272727', //Secondary
-				200: '#141414', //Background
-				100: '#191919', //Surface-Variant
-				50: '#000000', //Surface
-
-				'background': '#141414',
-				'background-variant': '#272727',
-				'surface': '#000000',
-				'surface-variant': '#191919',
-				'primary': '#FFFFFF',
-				'primary-variant': '#FFFFFF',
-				'secondary': '#272727',
-				'titles': '#FFFFFF',
-				'titles-variant': '#FFFFFF',
-				'texts': '#A8A8A8',
-				'icons': '#A8A8A8',
-				'icons-variant': '#FFFFFF',
+				background: '#141414',
+				backgroundVariant: '#272727',
+				surface: '#000000',
+				surfaceVariant: '#191919',
+				primary: '#FFFFFF',
+				primaryVariant: '#FFFFFF',
+				secondary: '#272727',
+				titles: '#FFFFFF',
+				titlesVariant: '#FFFFFF',
+				texts: '#A8A8A8',
+				disabled: '#CED5E3',
+				icons: {
+					primary: '#A8A8A8',
+					variant: '#FFFFFF'
+				},
+				button: {
+					filled: {
+						primary: '#0657F9',
+						variant: '#004ADF',
+						text: '#FFFFFF',
+					},
+					outlined: {
+						primary: '#FFFFFF',
+						variant: '#272727',
+						text: '#FFFFFF',
+					},
+					disabled: {
+						primary: '#141414',
+						text: '#A8A8A8',
+					}
+				}
 			},
 			
 			'blue': {
-				// 900: '#FFFFFF',
-				// 800: '#FE0000',
-				// 700: '#FE0000',
-
-				600: '#004ADF',
-				500: '#0657F9', //Primary
-				// 400: '#272727',
-				300: '#0657F9', //Secondary
-				200: '#012A7C', //Background
-				100: '#012A7C', //Surface-Variant
-				50: '#001746', //Surface
-
-				'background': '#012A7C',
-				'background-variant': '#001E59',
-				'surface': '#001746',
-				'surface-variant': '#012A7C',
-				'primary': '#0657F9',
-				'primary-variant': '#004ADF',
-				'secondary': '#0657F9',
-				'titles': '#FFFFFF',
-				'titles-variant': '#FFFFFF',
-				'texts': '#7F8DA9',
-				'icons': '#7F8DA9',
-				'icons-variant': '#FFFFFF',
+				background: '#012A7C',
+				backgroundVariant: '#001E59',
+				surface: '#001746',
+				surfaceVariant: '#012A7C',
+				primary: '#0657F9',
+				primaryVariant: '#004ADF',
+				secondary: '#0657F9',
+				titles: '#FFFFFF',
+				titlesVariant: '#FFFFFF',
+				texts: '#7F8DA9',
+				disabled: '#CED5E3',
+				icons: {
+					primary: '#7F8DA9',
+					variant: '#FFFFFF'
+				},
+				button: {
+					filled: {
+						primary: '#0657F9',
+						variant: '#004ADF',
+						text: '#FFFFFF',
+					},
+					outlined: {
+						primary: '#0657F9',
+						variant: '#012A7C',
+						text: '#0657F9',
+					},
+					disabled: {
+						primary: '#012A7C',
+						text: '#7F8DA9',
+					}
+				}
 			},
 			
 

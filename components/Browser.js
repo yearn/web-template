@@ -21,16 +21,16 @@ function	MainFakeBrowser({theme = 'dark'}) {
 					</p>
 					<div>
 						<button
-							data-for={'button'} data-tip={'color: titles-variant<br />background: secondary'} data-class={'z-50'}
-							className={`py-1 w-20 text-sm text-${theme}-titles-variant bg-${theme}-secondary rounded-md`}>
+							data-for={'button'} data-tip={'color: titlesVariant<br />background: secondary'} data-class={'z-50'}
+							className={`py-1 w-20 text-sm text-${theme}-titlesVariant bg-${theme}-secondary rounded-md`}>
 							{'hentai.eth'}
 						</button>
 					</div>
 				</div>
 
 				<div
-					data-for={'banner'} data-tip={'color: primary<br />background: background-variant<br />border: primary'} data-class={'z-50'}
-					className={`p-4 mb-4 w-full bg-${theme}-background-variant rounded-md border border-${theme}-primary`}>
+					data-for={'banner'} data-tip={'color: primary<br />background: backgroundVariant<br />border: primary'} data-class={'z-50'}
+					className={`p-4 mb-4 w-full bg-${theme}-backgroundVariant rounded-md border border-${theme}-primary`}>
 					<p className={`mb-4 text-base font-bold text-${theme}-primary`}>{'Welcome to your Portfolio screen'}</p>
 					<p className={`mb-2 text-sm text-${theme}-primary`}>{'There are many like it, but this one is yours. You can always return here for a bird`s-eye view of your holdings. The cards below show the total balance and utilization of your wallet, and the holdings and performance for every Yearn product you use.'}</p>
 					<p className={`text-sm text-${theme}-primary`}>{'Not sure where to start? Check out “Vaults” on the left side navigation.'}</p>
@@ -128,7 +128,7 @@ function	MainFakeBrowser({theme = 'dark'}) {
 					</div>
 				</div>
 
-				<div className={'flex flex-row space-x-4'}>
+				<div className={'flex flex-row pb-4 space-x-4'}>
 					<div
 						data-for={`${theme}-surface`} data-tip={'background: surface'}
 						className={`p-4 w-full bg-${theme}-surface rounded-md`}>
@@ -175,6 +175,38 @@ function	MainFakeBrowser({theme = 'dark'}) {
 									{'0.35%'}
 								</p>
 							</div>
+						</div>
+					</div>
+				</div>
+
+				<div className={'flex flex-row pb-4 space-x-4'}>
+					<div
+						data-for={`${theme}-surface`} data-tip={'background: surface'}
+						className={`p-4 w-full bg-${theme}-surface rounded-md`}>
+						<div className={'flex flex-row space-x-4'}>
+							<button
+								data-for={'button'} data-tip={'color: titlesVariant<br />background: secondary'} data-class={'z-50'}
+								className={`p-2 text-sm text-${theme}-button-filled-text bg-${theme}-button-filled-primary hover:bg-${theme}-button-filled-variant rounded-md font-bold`}>
+								{'This is my button'}
+							</button>
+
+							<button
+								data-for={'button'} data-tip={'color: titlesVariant<br />background: secondary'} data-class={'z-50'}
+								className={`p-2 text-sm text-${theme}-button-disabled-text bg-${theme}-button-disabled-primary cursor-not-allowed rounded-md font-bold`}>
+								{'This is my disabled button'}
+							</button>
+
+							<button
+								data-for={'button'} data-tip={'color: titlesVariant<br />background: secondary'} data-class={'z-50'}
+								className={`p-2 text-sm text-${theme}-button-outlined-text border-${theme}-button-outlined-text hover:bg-${theme}-button-outlined-variant border rounded-md`}>
+								{'This is my outlined button'}
+							</button>
+
+							<button
+								data-for={'button'} data-tip={'color: titlesVariant<br />background: secondary'} data-class={'z-50'}
+								className={`p-2 text-sm text-${theme}-button-disabled-text border-${theme}-button-disabled-text border cursor-not-allowed rounded-md`}>
+								{'This is my outlined disabled button'}
+							</button>
 						</div>
 					</div>
 				</div>
