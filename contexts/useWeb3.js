@@ -3,14 +3,16 @@ import	{ethers}							from	'ethers';
 import	QRCodeModal							from	'@walletconnect/qrcode-modal';
 import	{useWeb3React}						from	'@web3-react/core';
 import	{InjectedConnector}					from	'@web3-react/injected-connector';
-import	{ConnectorEvent}					from	'@web3-react/types';
 import	{WalletConnectConnector}			from	'@web3-react/walletconnect-connector';
 import	ModalLogin							from	'components/ModalLogin';
 import	useLocalStorage						from	'hooks/useLocalStorage';
+import	useWindowInFocus					from	'hooks/useWindowInFocus';
+import	useClientEffect						from	'hooks/useClientEffect';
 import	useDebounce							from	'hooks/useDebounce';
 import	{toAddress}							from	'utils';
+import	performBatchedUpdates				from	'utils/performBatchedUpdates';
 
-const walletType = {NONE: -1, METAMASK: 0, WALLET_CONNECT: 1};
+const walletType = {NONE: -1, METAMASK: 0, WALLET_CONNECT: 1, TRUSTWALLET: 2, COINBASE: 3, FORTMATIC: 4, PORTIS: 5};
 const Web3Context = createContext();
 
 function getProvider(chain = 'ethereum') {
@@ -26,83 +28,33 @@ function getProvider(chain = 'ethereum') {
 
 export const Web3ContextApp = ({children}) => {
 	const	web3 = useWeb3React();
-	const	{activate, active, library, connector, account, chainId, deactivate} = web3;
-	const	[provider, set_provider] = React.useState(undefined);
-	const	[address, set_address] = useLocalStorage('address', '');
-	const	[ens, set_ens] = useLocalStorage('ens', '');
-	const	[chainID, set_chainID] = useLocalStorage('chainID', -1);
-	const	[lastWallet, set_lastWallet] = useLocalStorage('lastWallet', walletType.NONE);
-	const	[, set_nonce] = React.useState(0);
-	const	[disableAutoChainChange, set_disableAutoChainChange] = React.useState(true);
-	const	[disconnected, set_disconnected] = React.useState(false);
+	const   {activate, active, library, account, chainId, deactivate} = web3;
+	const   [ens, set_ens] = useLocalStorage('ens', '');
+	const   [lastWallet, set_lastWallet] = useLocalStorage('lastWallet', walletType.NONE);
+	const   [disconnected, set_disconnected] = React.useState(false);
+	const	[disableAutoChainChange, set_disableAutoChainChange] = React.useState(false);
+	const	debouncedChainID = useDebounce(chainId, 500);
+	const	windowInFocus = useWindowInFocus();
 	const	[modalLoginOpen, set_modalLoginOpen] = React.useState(false);
-	const	debouncedChainID = useDebounce(chainID, 500);
-
-	const onUpdate = React.useCallback(async (update) => {
-		if (update.provider) {
-			set_provider(library);
-		}
-		if (update.chainId) {
-			const	isANumber = !isNaN(update.chainId) && !String(update.chainId).startsWith('0x');
-			set_chainID(isANumber ? Number(update.chainId) : parseInt(update.chainId, 16));
-		}
-		if (update.account) {
-			set_disconnected(true);
-			await getProvider().lookupAddress(toAddress(update.account)).then(_ens => set_ens(_ens || ''));
-			set_address(toAddress(update.account));
-			set_disconnected(false);
-		}
-		set_nonce(n => n + 1);
-	}, [library]);
-
-	const onDesactivate = React.useCallback(() => {
-		set_disconnected(true);
-		set_chainID(-1);
-		set_provider(undefined);
-		set_lastWallet(walletType.NONE);
-		set_address('');
-		set_ens('');
-		if (connector !== undefined) {
-			connector
-				.off(ConnectorEvent.Update, onUpdate)
-				.off(ConnectorEvent.Deactivate, onDesactivate);
-		}
-	}, [connector]);
-
-	const onActivate = React.useCallback(async () => {
-		connector
-			.on(ConnectorEvent.Update, onUpdate)
-			.on(ConnectorEvent.Deactivate, onDesactivate);
-		
-		set_disconnected(false);
-		set_provider(library);
-		set_address(toAddress(account));
-		const	isANumber = !isNaN(chainId) && !String(chainId).startsWith('0x');
-		set_chainID(isANumber ? Number(chainId) : parseInt(chainId, 16));
-		await getProvider().lookupAddress(toAddress(account)).then(_ens => set_ens(_ens || ''));
-	}, [account, chainId, connector, library, onDesactivate, onUpdate]);
 
 	const onSwitchChain = React.useCallback((force) => {
 		if (!force && (!active || disableAutoChainChange)) {
 			return;
 		}
-		const	isCompatibleChain = (
-			Number(debouncedChainID) === 1 ||
-			Number(debouncedChainID) === 250 ||
-			Number(debouncedChainID) === 1337 ||
-			Number(debouncedChainID) === 31337
-		);
+		const	isCompatibleChain = [1, 250, 1337, 31337].includes(Number(debouncedChainID || 0));
 		if (isCompatibleChain) {
 			return;
 		}
-		if (!provider || !active) {
+		if (!library || !active) {
 			console.error('Not initialized');
 			return;
 		}
-		provider
+		library
 			.send('wallet_switchEthereumChain', [{chainId: '0x1'}])
 			.catch(() => set_disableAutoChainChange(true));
-	}, [active, disableAutoChainChange, debouncedChainID, provider]);
+	}, [active, disableAutoChainChange, debouncedChainID, library]);
+
+	React.useEffect(() => onSwitchChain(), [windowInFocus, onSwitchChain]);
 
 	/**************************************************************************
 	**	connect
@@ -152,30 +104,39 @@ export const Web3ContextApp = ({children}) => {
 		}
 	}, [activate, active, deactivate, set_lastWallet]);
 
-	React.useEffect(() => {
-		if (active) {
-			onActivate();
-		}
-	}, [active, onActivate]);
-
-	React.useEffect(() => {
+	useClientEffect(() => {
 		if (!active && lastWallet !== walletType.NONE) {
 			connect(lastWallet);
 		}
 	}, [active]);
 
+	useClientEffect(() => {
+		if (account) {
+			getProvider()
+				.lookupAddress(toAddress(account))
+				.then((_ens) => set_ens(_ens || ''));
+		}
+	}, [account]);
+
 	return (
 		<Web3Context.Provider
 			value={{
-				address,
+				address: account,
 				ens,
 				disconnected,
-				chainID,
+				chainID: Number(chainId || 0),
 				onSwitchChain,
-				active: active && (chainID === 1 || chainID === 250 || chainID === 1337 || chainID === 31337),
-				provider,
+				active: active && [1, 250, 1337, 31337].includes(Number(chainId || 0)),
+				provider: library,
 				getProvider,
-				openLoginModal: () => set_modalLoginOpen(true)
+				openLoginModal: () => set_modalLoginOpen(true),
+				onDesactivate: () => {
+					performBatchedUpdates(() => {
+						set_lastWallet(walletType.NONE);
+						set_disconnected(true);
+					});
+					setTimeout(() => set_disconnected(false), 100);
+				}
 			}}>
 			{children}
 			<ModalLogin
