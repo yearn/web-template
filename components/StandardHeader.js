@@ -5,6 +5,7 @@ import	useBalances				from	'contexts/useBalances';
 import	IconHamburger			from	'components/icons/IconHamburger';
 import	ModalMenu				from	'components/ModalMenu';
 import	{truncateHex, formatAmount}			from	'utils';
+import	{Card}					from	'@yearn/yearn-web-lib';
 
 const		YFI_ADDRESS = '0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e';
 function	Header() {
@@ -15,7 +16,7 @@ function	Header() {
 
 	return (
 		<header className={'z-50 py-0 mx-auto w-full max-w-6xl bg-white-blue-1 md:py-4'}>
-			<div className={'flex justify-between items-center py-3 px-2 h-auto bg-white rounded-sm md:p-6 md:h-20'}>
+			<Card className={'flex justify-between items-center'}>
 				<div className={'flex flex-row items-center'}>
 					<h2 className={'mr-2 text-lg font-bold text-dark-blue-1 md:mr-4'}>
 						{process.env.WEBSITE_TITLE}
@@ -49,7 +50,7 @@ function	Header() {
 						{!active ? 'Connect wallet' : ens ? ens : truncateHex(address, 4)}
 					</button>
 				</div>
-			</div>
+			</Card>
 			<ModalMenu open={openMenu} set_open={set_openMenu} />
 		</header>
 	);

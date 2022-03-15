@@ -10,6 +10,9 @@ import	{LocalizationContextApp}	from 	'contexts/useLocalization';
 import	{Web3ContextApp}			from	'contexts/useWeb3';
 import	Header						from	'components/StandardHeader';
 import	Footer						from	'components/StandardFooter';
+import	IconYearn					from	'components/icons/IconYearn';
+import	{Navbar, Icon, Providers}	from	'@yearn/yearn-web-lib';
+import	{light}						from	'@yearn/yearn-web-themes';
 
 import	'tailwindcss/tailwind.css';
 import	'style/Default.css';
@@ -65,14 +68,51 @@ function	AppWrapper(props) {
 					site: '@iearnfinance',
 					cardType: 'summary_large_image',
 				}} />
-			<Header />
-			<main id={'app'} className={'flex relative flex-col mx-auto mb-0 max-w-6xl md:flex-row md:mb-6'}>
-				<Component
-					key={router.route}
-					element={props.element}
-					router={props.router}
-					{...pageProps} />
-			</main>
+			<div id={'app'} className={'grid relative flex-col grid-cols-12 gap-x-4 mx-auto mb-0 max-w-6xl md:flex-row md:mb-6'}>
+				<div className={'col-span-2'}>
+					<Navbar
+						selected={router.pathname}
+						setSelected={(selected) => router.push(selected)}
+						options={[
+							{
+								value: 'portfolio',
+								label: 'Portfolio',
+								icon: <Icon.Wallet />,
+							},
+							{
+								value: 'vaults',
+								label: 'Vaults',
+								icon: <Icon.Vault />,
+							},
+							{
+								value: 'labs',
+								label: 'Labs',
+								icon: <Icon.Lab />,
+							},
+							{
+								value: 'ironBank',
+								label: 'Iron Bank',
+								icon: <Icon.IronBank />,
+							},
+							{
+								value: 'settings',
+								label: 'Settings',
+								icon: <Icon.Settings />,
+							},
+						]}
+						title={'template'}
+						logo={<IconYearn />}
+					/>
+				</div>
+				<div className={'col-span-10'}>
+					<Header />
+					<Component
+						key={router.route}
+						element={props.element}
+						router={props.router}
+						{...pageProps} />
+				</div>
+			</div>
 			<Footer />
 		</>
 	);
@@ -86,23 +126,25 @@ function	MyApp(props) {
 	const	{Component, pageProps} = props;
 	
 	return (
-		<UIContextApp>
-			<Web3ReactProvider getLibrary={getLibrary}>
-				<Web3ContextApp>
-					<BalancesContextApp>
-						<PricesContextApp>
-							<LocalizationContextApp router={props.router}>
-								<AppWrapper
-									Component={Component}
-									pageProps={pageProps}
-									element={props.element}
-									router={props.router} />
-							</LocalizationContextApp>
-						</PricesContextApp>
-					</BalancesContextApp>
-				</Web3ContextApp>
-			</Web3ReactProvider>
-		</UIContextApp>
+		<Providers theme={light}>
+			<UIContextApp>
+				<Web3ReactProvider getLibrary={getLibrary}>
+					<Web3ContextApp>
+						<BalancesContextApp>
+							<PricesContextApp>
+								<LocalizationContextApp router={props.router}>
+									<AppWrapper
+										Component={Component}
+										pageProps={pageProps}
+										element={props.element}
+										router={props.router} />
+								</LocalizationContextApp>
+							</PricesContextApp>
+						</BalancesContextApp>
+					</Web3ContextApp>
+				</Web3ReactProvider>
+			</UIContextApp>
+		</Providers>
 	);
 }
 

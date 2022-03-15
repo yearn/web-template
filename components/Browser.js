@@ -1,5 +1,5 @@
 import	React			from	'react';
-import	Token			from	'@yearn/yearn-web-tokens';
+import	Token			from	'@yearn/yearn-web-assets';
 import	ReactTooltip	from	'react-tooltip';
 import	IconChevron		from	'components/icons/IconChevron';
 

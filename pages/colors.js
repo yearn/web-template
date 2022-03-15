@@ -1,6 +1,5 @@
 import	React		from	'react';
 import	Browser		from	'components/Browser';
-import	{Card}		from	'@yearn/yearn-web-lib';
 
 function	ColorBox({color, hex, name}) {
 	return (
@@ -118,7 +117,7 @@ function	Index() {
 	const	[theme, set_theme] = React.useState('light');
 
 	return (
-		<Card>
+		<div className={'p-6 w-full bg-white'}>
 			<div className={'flex flex-row justify-between mb-8'}>
 				<div className={'flex flex-row items-center'}>
 					<div className={'mr-4 w-4 h-4 bg-yearn-blue rounded-sm'} />
@@ -135,7 +134,7 @@ function	Index() {
 				</div>
 			</div>
 			<ThemeSection theme={theme} />
-		</Card>
+		</div>
 	);
 }
 
