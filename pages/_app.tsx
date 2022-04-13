@@ -9,7 +9,7 @@ import	{usePrices, useBalances}			from	'@majorfi/web-lib/contexts';
 import	{format}							from	'@majorfi/web-lib/utils';
 import	Footer								from	'components/StandardFooter';
 import	IconYearn							from	'components/icons/IconYearn';
-import	IconSettings						from	'components/icons/IconSettings';
+// import	IconSettings						from	'components/icons/IconSettings';
 import	IconVault							from	'components/icons/IconVault';
 import	IconHealthcheck						from	'components/icons/IconHealthcheck';
 import	IconNone							from	'components/icons/IconNone';

@@ -45,7 +45,6 @@ function	DocumentationCard(): ReactElement {
 					<div className={'flex justify-center p-4 w-full min-h-[20rem] rounded-lg bg-gradient-default'}>
 						<div className={'w-3/4'}>
 							<Card.Detail
-								variant={'surface'}
 								summary={(p: unknown): ReactElement => (
 									<Card.Detail.Summary startChildren={<p>{'Hello'}</p>} {...p} />
 								)}>
