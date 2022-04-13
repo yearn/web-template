@@ -1,6 +1,7 @@
 import	React, {ReactElement}				from	'react';
 import	Head								from	'next/head';
 import	Link								from	'next/link';
+import	Script								from	'next/script';
 import	{AppProps}							from	'next/app';
 import	{DefaultSeo}						from	'next-seo';
 import	{WithYearn}							from	'@majorfi/web-lib';
@@ -39,8 +40,8 @@ function	AppHead(): ReactElement {
 				<meta name={'googlebot'} content={'index,nofollow'} />
 				<meta charSet={'utf-8'} />
 
-				<script src={'https://unpkg.com/feedbackfin@^1'} defer></script>
-				<script src={'/feedback.js'} defer></script>
+				<Script src={'/feedback.source.js'} defer />
+				<Script src={'/feedback.js'} defer />
 			</Head>
 			<DefaultSeo
 				title={process.env.WEBSITE_NAME}
