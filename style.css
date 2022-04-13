@@ -1,5 +1,12 @@
 /* This will load Tailwindcss + all the overwrite from Yearn lib */
 @import '@majorfi/web-lib/dist/style.css';
+@font-face {
+    font-family: 'Menlo Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Menlo Regular'), url('/Menlo-Regular.woff') format('woff');
+}
+
 
 /* 🔵 - Yearn Finance ******************************************************
 ** Shorthand for some group of style used across the application
@@ -8,7 +15,9 @@
 .flex-row-start {@apply flex flex-row items-start;}
 .flex-col-start {@apply flex flex-col items-start;}
 .flex-col-full {@apply flex flex-col w-full h-full;}
-
+.bg-gradient-default {
+	background-image: linear-gradient(to right bottom, #0546c7, #1753d4, #235fe1, #2e6ced, #3879fa);
+}
 
 /* 🔵 - Yearn Finance ******************************************************
 ** Overwrite for the feedbackfin component
@@ -37,4 +46,15 @@
 #feedbackfin__submit:focus-visible,
 #feedbackfin__submit:hover {
 	@apply bg-secondary-variant;
+}
+
+
+/* 🔵 - Yearn Finance ******************************************************
+** Prism
+**************************************************************************/
+.prism-code {
+	@apply p-4 rounded-lg my-4 overflow-x-scroll;
+}
+.token {
+	font-family: 'Menlo Regular', monospace;
 }

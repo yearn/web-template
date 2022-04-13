@@ -12,6 +12,7 @@ import	IconYearn							from	'components/icons/IconYearn';
 import	IconSettings						from	'components/icons/IconSettings';
 import	IconVault							from	'components/icons/IconVault';
 import	IconHealthcheck						from	'components/icons/IconHealthcheck';
+import	IconNone							from	'components/icons/IconNone';
 
 import	'../style.css';
 
@@ -41,6 +42,7 @@ function	AppHead(): ReactElement {
 
 				<script src={'/feedback.source.js'} defer />
 				<script src={'/feedback.js'} defer />
+				<script src={'/prism.js'} />
 			</Head>
 			<DefaultSeo
 				title={process.env.WEBSITE_NAME}
@@ -80,22 +82,40 @@ function	AppWrapper(props: AppProps): ReactElement {
 	const	navbarMenuOptions = [
 		{
 			route: '/',
-			values: ['/', '/vault/[vault]', '/vault/[vault]/[strategy]'],
-			label: 'Vaults',
+			values: ['/'],
+			label: 'Home',
 			icon: <IconVault  />
 		},
 		{
-			route: '/healthcheck',
-			values: ['/healthcheck'],
-			label: 'Healthcheck',
+			route: '/doc',
+			values: ['/doc'],
+			label: 'Documentation',
 			icon: <IconHealthcheck />
 		},
 		{
-			route: '/settings',
-			values: ['/settings'],
-			label: 'Settings',
-			icon: <IconSettings />
+			route: '/doc/cards',
+			values: ['/doc/cards'],
+			label: 'Cards',
+			icon: <IconNone />
+		},
+		{
+			route: '/doc/cards-tabs',
+			values: ['/doc/cards-tabs'],
+			label: 'Cards.Tabs',
+			icon: <IconNone />
+		},
+		{
+			route: '/doc/cards-details',
+			values: ['/doc/cards-details'],
+			label: 'Cards.Detail',
+			icon: <IconNone />
 		}
+		// {
+		// 	route: '/settings',
+		// 	values: ['/settings'],
+		// 	label: 'Settings',
+		// 	icon: <IconSettings />
+		// }
 	];
 
 	function	onChangeRoute(selected: string): void {
