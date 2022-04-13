@@ -113,6 +113,7 @@ function	AppWrapper(props: AppProps): ReactElement {
 							selected={router.pathname}
 							set_selected={onChangeRoute}
 							logo={<IconYearn className={'w-full h-12 text-primary'} />}
+							title={'yWeb'}
 							options={navbarMenuOptions}
 							wrapper={<Link passHref href={''} />}>
 							<div className={'flex flex-col mt-auto space-y-2'}>
