@@ -13,7 +13,9 @@
 				"lintfix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
 		},
 		"dependencies": {
+				"@builder.io/partytown": "^0.5.2",
 				"@headlessui/react": "^1.5.0",
+				"@linear/sdk": "^1.22.0",
 				"@majorfi/web-lib": "^0.0.152",
 				"@tailwindcss/forms": "^0.5.0",
 				"@tailwindcss/line-clamp": "^0.3.1",

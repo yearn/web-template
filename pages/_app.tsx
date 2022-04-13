@@ -38,6 +38,9 @@ function	AppHead(): ReactElement {
 				<meta name={'robots'} content={'index,nofollow'} />
 				<meta name={'googlebot'} content={'index,nofollow'} />
 				<meta charSet={'utf-8'} />
+
+				<script src={'https://unpkg.com/feedbackfin@^1'} defer></script>
+				<script src={'/feedback.js'} defer></script>
 			</Head>
 			<DefaultSeo
 				title={process.env.WEBSITE_NAME}
@@ -111,6 +114,15 @@ function	AppWrapper(props: AppProps): ReactElement {
 							logo={<IconYearn className={'w-full h-12 text-primary'} />}
 							options={navbarMenuOptions}
 							wrapper={<Link passHref href={''} />}>
+							<div className={'flex flex-col mt-auto space-y-2'}>
+								{
+									process.env.USE_FEEDBACKS ? (
+										<button data-feedbackfin-button className={'button-light'}>
+											{'Feedback'}
+										</button>
+									) : null
+								}
+							</div>
 						</Navbar>
 					</div>
 				</div>
