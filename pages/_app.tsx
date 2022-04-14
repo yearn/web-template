@@ -7,9 +7,9 @@ import	{WithYearn}							from	'@majorfi/web-lib';
 import	{Header, Navbar}					from	'@majorfi/web-lib/layouts';
 import	{usePrices, useBalances}			from	'@majorfi/web-lib/contexts';
 import	{format}							from	'@majorfi/web-lib/utils';
+import	{AlertError, Hamburger}				from	'@majorfi/web-lib/icons';
 import	Footer								from	'components/StandardFooter';
 import	IconYearn							from	'components/icons/IconYearn';
-// import	IconSettings						from	'components/icons/IconSettings';
 import	IconVault							from	'components/icons/IconVault';
 import	IconHealthcheck						from	'components/icons/IconHealthcheck';
 
@@ -92,78 +92,106 @@ function	AppWrapper(props: AppProps): ReactElement {
 			icon: <IconHealthcheck />,
 			options: [
 				{
-					route: '/doc/cards',
-					values: ['/doc/cards'],
+					route: '/doc/components/cards',
+					values: ['/doc/components/cards'],
 					label: 'Cards'
 				},
 				{
-					route: '/doc/cards-tabs',
-					values: ['/doc/cards-tabs'],
+					route: '/doc/components/cards-tabs',
+					values: ['/doc/components/cards-tabs'],
 					label: 'Cards.Tabs'
 				},
 				{
-					route: '/doc/cards-details',
-					values: ['/doc/cards-details'],
+					route: '/doc/components/cards-details',
+					values: ['/doc/components/cards-details'],
 					label: 'Cards.Detail'
 				},
 				{
-					route: '/doc/statistic-card',
-					values: ['/doc/statistic-card'],
+					route: '/doc/components/statistic-card',
+					values: ['/doc/components/statistic-card'],
 					label: 'StatisticCard'
 				},
 				{
-					route: '/doc/description-list',
-					values: ['/doc/description-list'],
+					route: '/doc/components/description-list',
+					values: ['/doc/components/description-list'],
 					label: 'DescriptionList'
 				},
 				{
-					route: '/doc/alert-banner',
-					values: ['/doc/alert-banner'],
+					route: '/doc/components/alert-banner',
+					values: ['/doc/components/alert-banner'],
 					label: 'AlertBanner'
 				},
 				{
-					route: '/doc/alert-box',
-					values: ['/doc/alert-box'],
+					route: '/doc/components/alert-box',
+					values: ['/doc/components/alert-box'],
 					label: 'AlertBox'
 				},
 				{
-					route: '/doc/search-box',
-					values: ['/doc/search-box'],
+					route: '/doc/components/search-box',
+					values: ['/doc/components/search-box'],
 					label: 'SearchBox'
 				},
 				{
-					route: '/doc/button',
-					values: ['/doc/button'],
+					route: '/doc/components/button',
+					values: ['/doc/components/button'],
 					label: 'Button'
 				},
 				{
-					route: '/doc/dropdown',
-					values: ['/doc/dropdown'],
+					route: '/doc/components/dropdown',
+					values: ['/doc/components/dropdown'],
 					label: 'Dropdown'
 				},
 				{
-					route: '/doc/switch',
-					values: ['/doc/switch'],
+					route: '/doc/components/switch',
+					values: ['/doc/components/switch'],
 					label: 'Switch'
 				},
 				{
-					route: '/doc/address-with-actions',
-					values: ['/doc/address-with-actions'],
+					route: '/doc/components/switch-theme',
+					values: ['/doc/components/switch-theme'],
+					label: 'Switch theme'
+				},
+				{
+					route: '/doc/components/address-with-actions',
+					values: ['/doc/components/address-with-actions'],
 					label: 'AddressWithActions'
 				},
 				{
-					route: '/doc/txhash-with-actions',
-					values: ['/doc/txhash-with-actions'],
+					route: '/doc/components/txhash-with-actions',
+					values: ['/doc/components/txhash-with-actions'],
 					label: 'TxHashWithActions'
+				},
+				{
+					route: '/doc/components/modal',
+					values: ['/doc/components/modal'],
+					label: 'Modal'
+				},
+				{
+					route: '/doc/components/modal-login',
+					values: ['/doc/components/modal-login'],
+					label: 'Modal Login'
+				}
+			]
+		},
+		{
+			route: '/doc/icons',
+			values: ['/doc/icons'],
+			label: 'Icons',
+			icon: <AlertError />
+		},
+		{
+			route: '/doc/layouts',
+			values: ['/doc/layouts'],
+			label: 'Layouts',
+			icon: <Hamburger />,
+			options: [
+				{
+					route: '/doc/layouts/header',
+					values: ['/doc/layouts/header'],
+					label: 'Header'
 				}
 			]
 		}
-		// {
-		// 	route: '/settings',
-		// 	values: ['/settings'],
-		// 	label: 'Settings',
-		// 	icon: <IconSettings />
-		// }
 	];
 
 	function	onChangeRoute(selected: string): void {

@@ -53,9 +53,15 @@ module.exports = ({
 			42161: process.env.RPC_URL_ARBITRUM || 'https://arbitrum.public-rpc.com'
 		},
 		ALCHEMY_KEY: process.env.ALCHEMY_KEY,
+
+		FEEBACKS_TYPE: 'github',
 		LINEAR_OAUTH_TOKEN: process.env.LINEAR_OAUTH_TOKEN,
 		LINEAR_TEAM_ID: process.env.LINEAR_TEAM_ID,
-		LINEAR_PROJECT_NAME: process.env.LINEAR_PROJECT_NAME
+		LINEAR_PROJECT_NAME: process.env.LINEAR_PROJECT_NAME,
+
+		GITHUB_AUTH_TOKEN: process.env.GITHUB_AUTH_TOKEN,
+		GITHUB_PROJECT_OWNER: process.env.GITHUB_PROJECT_OWNER,
+		GITHUB_PROJECT_REPO: process.env.GITHUB_PROJECT_REPO
 
 	}
 });
