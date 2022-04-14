@@ -12,7 +12,6 @@ import	IconYearn							from	'components/icons/IconYearn';
 // import	IconSettings						from	'components/icons/IconSettings';
 import	IconVault							from	'components/icons/IconVault';
 import	IconHealthcheck						from	'components/icons/IconHealthcheck';
-import	IconNone							from	'components/icons/IconNone';
 
 import	'../style.css';
 
@@ -89,26 +88,75 @@ function	AppWrapper(props: AppProps): ReactElement {
 		{
 			route: '/doc',
 			values: ['/doc'],
-			label: 'Documentation',
-			icon: <IconHealthcheck />
-		},
-		{
-			route: '/doc/cards',
-			values: ['/doc/cards'],
-			label: 'Cards',
-			icon: <IconNone />
-		},
-		{
-			route: '/doc/cards-tabs',
-			values: ['/doc/cards-tabs'],
-			label: 'Cards.Tabs',
-			icon: <IconNone />
-		},
-		{
-			route: '/doc/cards-details',
-			values: ['/doc/cards-details'],
-			label: 'Cards.Detail',
-			icon: <IconNone />
+			label: 'Components',
+			icon: <IconHealthcheck />,
+			options: [
+				{
+					route: '/doc/cards',
+					values: ['/doc/cards'],
+					label: 'Cards'
+				},
+				{
+					route: '/doc/cards-tabs',
+					values: ['/doc/cards-tabs'],
+					label: 'Cards.Tabs'
+				},
+				{
+					route: '/doc/cards-details',
+					values: ['/doc/cards-details'],
+					label: 'Cards.Detail'
+				},
+				{
+					route: '/doc/statistic-card',
+					values: ['/doc/statistic-card'],
+					label: 'StatisticCard'
+				},
+				{
+					route: '/doc/description-list',
+					values: ['/doc/description-list'],
+					label: 'DescriptionList'
+				},
+				{
+					route: '/doc/alert-banner',
+					values: ['/doc/alert-banner'],
+					label: 'AlertBanner'
+				},
+				{
+					route: '/doc/alert-box',
+					values: ['/doc/alert-box'],
+					label: 'AlertBox'
+				},
+				{
+					route: '/doc/search-box',
+					values: ['/doc/search-box'],
+					label: 'SearchBox'
+				},
+				{
+					route: '/doc/button',
+					values: ['/doc/button'],
+					label: 'Button'
+				},
+				{
+					route: '/doc/dropdown',
+					values: ['/doc/dropdown'],
+					label: 'Dropdown'
+				},
+				{
+					route: '/doc/switch',
+					values: ['/doc/switch'],
+					label: 'Switch'
+				},
+				{
+					route: '/doc/address-with-actions',
+					values: ['/doc/address-with-actions'],
+					label: 'AddressWithActions'
+				},
+				{
+					route: '/doc/txhash-with-actions',
+					values: ['/doc/txhash-with-actions'],
+					label: 'TxHashWithActions'
+				}
+			]
 		}
 		// {
 		// 	route: '/settings',

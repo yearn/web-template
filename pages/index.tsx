@@ -96,16 +96,18 @@ function	ColorPaletteLight(): ReactElement {
 function	Index(): ReactElement {
 	return (
 		<section aria-label={'some default section'}>
-			<AlertBanner
-				id={'color-system'}
-				title={'Color system'}
-				level={'info'}
-				maxHeight={'max-h-[600px] md:max-h-[300px]'}>
-				<div>
-					<p className={'text-primary'}>{'With this color system, we are trying to mimic some material standard conventions, with the use of `primary`, `secondary`, `variant`, `background`, `surface`, etc. Naming if far from perfect yet, but it\'s a Work In Progress'}</p>
-					<p className={'block mt-4 text-primary'}>{'The colors are set using css variables and can be overrited in your style.css file.'}</p>
-				</div>
-			</AlertBanner>
+			<div className={'mb-4'}>
+				<AlertBanner
+					id={'color-system'}
+					title={'Color system'}
+					level={'info'}
+					maxHeight={'max-h-[600px] md:max-h-[300px]'}>
+					<div>
+						<p className={'text-primary'}>{'With this color system, we are trying to mimic some material standard conventions, with the use of `primary`, `secondary`, `variant`, `background`, `surface`, etc. Naming if far from perfect yet, but it\'s a Work In Progress'}</p>
+						<p className={'block mt-4 text-primary'}>{'The colors are set using css variables and can be overrited in your style.css file.'}</p>
+					</div>
+				</AlertBanner>
+			</div>
 			<Card>
 				<ColorPaletteLight />
 			</Card>
