@@ -165,11 +165,6 @@ function	AppWrapper(props: AppProps): ReactElement {
 					route: '/doc/components/modal',
 					values: ['/doc/components/modal'],
 					label: 'Modal'
-				},
-				{
-					route: '/doc/components/modal-login',
-					values: ['/doc/components/modal-login'],
-					label: 'Modal Login'
 				}
 			]
 		},
