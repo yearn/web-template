@@ -18,7 +18,7 @@ async function	withGithub(req: NextApiRequest, res: NextApiResponse): Promise<vo
 	await axios.post(`https://api.github.com/repos/${process.env.GITHUB_PROJECT_OWNER}/${process.env.GITHUB_PROJECT_REPO}/issues`, {
 		owner: process.env.GITHUB_PROJECT_OWNER,
 		repo: process.env.GITHUB_PROJECT_REPO,
-		title: `${feedbackType} - ${req.body.message.slice(0, 20)} ${req.body.message.length > 20 ? '...' : ''}`,
+		title: `${feedbackType} - ${req.body.message.slice(0, 30)} ${req.body.message.length > 30 ? '...' : ''}`,
 		body: `${req.body.message}\n\nFrom page: ${req.headers.referer}`,
 		assignees: [],
 		labels: [
