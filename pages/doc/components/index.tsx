@@ -175,7 +175,7 @@ function	Element({children, title, version, description, href, background}: TEle
 function	Documentation(): ReactElement {
 	return (
 		<>
-			<AlertBanner id={'yComponents'} level={'info'} title={'The yComponents'}>
+			<AlertBanner id={'yComponents'} level={'info'} title={'The yComponents'} maxHeight={'max-height-[350px] md:max-height-[250px]'}>
 				<div>
 					<p>{'This is a beta version of the documentation. It is not yet complete and will be updated as soon as possible.'}</p>
 					<p className={'mt-4'}>{'If you want to contribute to the documentation, please open an issue on the GitHub repository, or just hit the feedback button on the bottom left of that page!'}</p>
@@ -184,7 +184,7 @@ function	Documentation(): ReactElement {
 			<section aria-label={'documentation list'} className={'mt-8 mb-16 space-y-20'}>
 				<section aria-label={'Cards layout elements'}>
 					<h1 className={'mb-4 text-3xl text-typo-primary'}>{'Cards'}</h1>
-					<div className={'grid grid-cols-2 gap-6'}>
+					<div className={'grid grid-cols-1 gap-6 md:grid-cols-2'}>
 						{ElementListCards.map((element, index): ReactElement => (
 							<Element key={index} {...element} />
 						))}
@@ -193,7 +193,7 @@ function	Documentation(): ReactElement {
 
 				<section aria-label={'Forms elements'}>
 					<h1 className={'mb-4 text-3xl text-typo-primary'}>{'Forms'}</h1>
-					<div className={'grid grid-cols-2 gap-6'}>
+					<div className={'grid grid-cols-1 gap-6 md:grid-cols-2'}>
 						{ElementListForms.map((element, index): ReactElement => (
 							<Element key={index} {...element} />
 						))}
@@ -202,7 +202,7 @@ function	Documentation(): ReactElement {
 
 				<section aria-label={'Data display elements'}>
 					<h1 className={'mb-4 text-3xl text-typo-primary'}>{'Data display'}</h1>
-					<div className={'grid grid-cols-2 gap-6'}>
+					<div className={'grid grid-cols-1 gap-6 md:grid-cols-2'}>
 						{ElementListDataDisplay.map((element, index): ReactElement => (
 							<Element key={index} {...element} />
 						))}
@@ -211,7 +211,7 @@ function	Documentation(): ReactElement {
 
 				<section aria-label={'Feedback elements'}>
 					<h1 className={'mb-4 text-3xl text-typo-primary'}>{'Feedback'}</h1>
-					<div className={'grid grid-cols-2 gap-6'}>
+					<div className={'grid grid-cols-1 gap-6 md:grid-cols-2'}>
 						{ElementListFeedback.map((element, index): ReactElement => (
 							<Element key={index} {...element} />
 						))}

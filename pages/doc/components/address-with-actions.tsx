@@ -21,7 +21,7 @@ export default function	App(): React.ReactElement {
 
 export function	AddressActionComponent(): ReactElement {
 	return (
-		<div className={'w-3/4'}>
+		<div className={'w-4/5'}>
 			<Card>
 				<AddressWithActions
 					address={'0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7'}
