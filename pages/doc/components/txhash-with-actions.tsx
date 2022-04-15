@@ -19,21 +19,27 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+export function	HashActionComponent(): ReactElement {
+	return (
+		<div className={'w-3/4'}>
+			<Card>
+				<TxHashWithActions
+					txHash={'0x56aa0161072a6dd2661adf6fbebd0cbc6f538f9ad2306cc4cbe5afa06268b2f2'}
+					explorer={'https://etherscan.io'}
+					truncate={8}
+					className={'font-mono text-sm text-typo-secondary'} />
+			</Card>
+		</div>
+	);
+}
+
 function	DocumentationTxHashWithAction(): ReactElement {
 	return (
 		<section aria-label={'some default section'}>
 			<Card>
 				<h1 className={'mb-2 text-3xl text-typo-primary'}>{'TxHashWithActions'}</h1>				
 				<div className={'box-gradient-default'}>
-					<div className={'w-3/4'}>
-						<Card>
-							<TxHashWithActions
-								txHash={'0x56aa0161072a6dd2661adf6fbebd0cbc6f538f9ad2306cc4cbe5afa06268b2f2'}
-								explorer={'https://etherscan.io'}
-								truncate={0}
-								className={'font-mono text-sm text-typo-secondary'} />
-						</Card>
-					</div>
+					<HashActionComponent />
 				</div>
 				<Highlight code={code} />
 

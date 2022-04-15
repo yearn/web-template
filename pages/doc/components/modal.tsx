@@ -28,28 +28,37 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
-function	DocumentationModal(): ReactElement {
+export function	ModalComponent(): ReactElement {
 	const	[isOpen, set_isOpen] = React.useState(false);
 
+	return (
+		<div className={'relative w-full flex-center'}>
+			<Button
+				variant={'light'}
+				onClick={(): void => set_isOpen(true)}
+				className={'min-w-[132px]'}>
+				{'Open Modal'}
+			</Button>
+			<Modal isOpen={isOpen} onClose={(): void => set_isOpen(false)}>
+				<Card className={'flex-center'}>
+					<Button
+						onClick={(): void => set_isOpen(false)}
+						className={'min-w-[132px]'}>
+						{'Close Modal'}
+					</Button>
+				</Card>
+			</Modal>
+		</div>
+	);
+}
+
+function	DocumentationModal(): ReactElement {
 	return (
 		<section aria-label={'some default section'}>
 			<Card>
 				<h1 className={'mb-2 text-3xl text-typo-primary'}>{'Modal'}</h1>
 				<div className={'box-gradient-alt'}>
-					<Button
-						onClick={(): void => set_isOpen(true)}
-						className={'min-w-[132px]'}>
-						{'Open Modal'}
-					</Button>
-					<Modal isOpen={isOpen} onClose={(): void => set_isOpen(false)}>
-						<Card className={'flex-center'}>
-							<Button
-								onClick={(): void => set_isOpen(false)}
-								className={'min-w-[132px]'}>
-								{'Close Modal'}
-							</Button>
-						</Card>
-					</Modal>
+					<ModalComponent />
 				</div>
 				<Highlight code={code} />
 

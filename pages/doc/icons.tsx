@@ -23,8 +23,8 @@ function	DocumentationSwitch(): ReactElement {
 					<div className={'grid grid-cols-6 gap-10 w-full'}>
 						{Object.entries(Icons).map(([name, icon]): ReactElement => (
 							<div key={name} className={'flex-col flex-center'}>
-								{React.createElement(icon as any, {className: 'w-6 h-6'})}
-								<p className={'mt-1 text-xs'}>{name}</p>
+								{React.createElement(icon as any, {className: 'text-white w-6 h-6'})}
+								<p className={'mt-1 text-xs text-white'}>{name}</p>
 							</div>
 						))}
 					</div>

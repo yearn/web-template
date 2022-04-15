@@ -20,6 +20,19 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+export function	ButtonsComponent(): ReactElement {
+	return (
+		<div className={'mx-auto'}>
+			<Button
+				variant={'light'}
+				onClick={(): void => console.log('Do something')}
+				className={'min-w-[132px]'}>
+				{'Button'}
+			</Button>
+		</div>
+	);
+}
+
 function	DocumentationButton(): ReactElement {
 	const	[isDisabled, set_isDisabled] = React.useState(false);
 	const	[variant, set_variant] = React.useState(0);
@@ -32,7 +45,6 @@ function	DocumentationButton(): ReactElement {
 				<div className={variant > 1 ? 'box-gradient-default' : 'box-gradient-alt'}>
 					<Button
 						variant={variantType[variant]}
-						stopPropagation
 						onClick={(): void => console.log('Do something')}
 						disabled={isDisabled}
 						className={'min-w-[132px]'}>

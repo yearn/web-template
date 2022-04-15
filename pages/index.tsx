@@ -79,13 +79,13 @@ function	ColorPaletteLight(): ReactElement {
 					<h4 className={'mb-2'}>{'Errors'}</h4>
 					<ColorBox color={'bg-alert-error-primary'} name={'--color-alert-error-primary'} />
 					<ColorBox color={'bg-alert-error-secondary'} name={'--color-alert-error-secondary'} />
-					<ColorBox color={'bg-eeeeeeee'} name={'aaaaaaaaa'} />
+					<ColorBox color={'bg-alert-error-secondary-variant'} name={'--color-alert-error-secondary-variant'} />
 				</div>
 				<div className={'flex flex-col gap-2 w-full'}>
 					<h4 className={'mb-2'}>{'Critical'}</h4>
 					<ColorBox color={'bg-alert-critical-primary'} name={'--color-alert-critical-primary'} />
 					<ColorBox color={'bg-alert-critical-secondary'} name={'--color-alert-critical-secondary'} />
-					<ColorBox color={'bg-eeeeeeee'} name={'aaaaaaaaa'} />
+					<ColorBox color={'bg-alert-critical-secondary-variant'} name={'--color-alert-critical-secondary-variant'} />
 				</div>
 			</div>
 

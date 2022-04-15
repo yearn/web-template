@@ -17,17 +17,23 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
-function	DocumentationSwitch(): ReactElement {
+export function	SwitchComponent(): ReactElement {
 	const	[isEnabled, set_isEnabled] = React.useState(false);
 
+	return (
+		<Switch
+			isEnabled={isEnabled}
+			onSwitch={set_isEnabled} />
+	);
+}
+
+function	DocumentationSwitch(): ReactElement {
 	return (
 		<section aria-label={'some default section'}>
 			<Card>
 				<h1 className={'mb-2 text-3xl text-typo-primary'}>{'Switch'}</h1>
 				<div className={'box-gradient-default'}>
-					<Switch
-						isEnabled={isEnabled}
-						onSwitch={set_isEnabled} />
+					<SwitchComponent />
 				</div>
 				<Highlight code={code} />
 

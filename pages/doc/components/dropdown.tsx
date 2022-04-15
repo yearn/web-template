@@ -27,7 +27,7 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
-function	DocumentationDropdown(): ReactElement {
+export function	DropdownComponent(): ReactElement {
 	const	options = [
 		{icon: <Icons.NetworkEthereum />, label: 'Ethereum', value: 1},
 		{icon: <Icons.NetworkFantom />, label: 'Fantom', value: 250},
@@ -37,15 +37,21 @@ function	DocumentationDropdown(): ReactElement {
 	const	[selectedOption, set_selectedOption] = React.useState(options[0]);
 
 	return (
+		<Dropdown
+			defaultOption={options[0]}
+			options={options}
+			selected={selectedOption}
+			onSelect={(option: any): void => set_selectedOption(option)} />
+	);
+}
+
+function	DocumentationDropdown(): ReactElement {
+	return (
 		<section aria-label={'some default section'}>
 			<Card>
 				<h1 className={'mb-2 text-3xl text-typo-primary'}>{'Dropdown'}</h1>
 				<div className={'box-gradient-default'}>
-					<Dropdown
-						defaultOption={options[0]}
-						options={options}
-						selected={selectedOption}
-						onSelect={(option: any): void => set_selectedOption(option)} />
+					<DropdownComponent />
 				</div>
 				<Highlight code={code} />
 

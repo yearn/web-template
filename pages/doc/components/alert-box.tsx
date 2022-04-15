@@ -20,6 +20,21 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+
+export function	AlertBoxComponent(): ReactElement {
+	return (
+		<div className={'w-3/4'}>
+			<AlertBox
+				level={'warning'}
+				alerts={[
+					'This is my alert number 1',
+					'And this is the second one',
+					'Yes, I am bad at writing dummy texts'
+				]} />
+		</div>
+	);
+}
+
 function	DocumentationAlertBox(): ReactElement {
 	const	[variant, set_variant] = React.useState(0);
 	const	variantType = ['info', 'warning', 'error', 'critical'];

@@ -24,6 +24,33 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+export function	AlertBannerComponent(): ReactElement {
+	const	[refresher, set_refresher] = React.useState(0);
+	const	resetStorage = (): void => {
+		window.localStorage.setItem('someID-info', JSON.stringify(true));
+		setTimeout((): void => set_refresher(refresher + 1), 100);
+	};
+	return (
+		<div className={'relative w-full flex-center'}>
+			<div className={'z-10'}>
+				<AlertBanner
+					key={`someID-info${refresher}`}
+					id={'someID-info'}
+					title={'Spend your time wisely'}
+					level={'info'}
+					maxHeight={'max-h-[600px] md:max-h-[300px] alertBanner--wrapper'}>
+					<div>
+						<p>{'Yearn Vaults are a way to use technology to help manage your holdings.'}</p>
+					</div>
+				</AlertBanner>
+			</div>
+			<div className={'absolute z-0'}>
+				<div onClick={resetStorage} className={'flex px-2 h-8 font-bold rounded-lg transition-colors cursor-pointer bg-surface flex-center hover:bg-surface-variant'}>{'Reset'}</div>
+			</div>
+		</div>
+	);
+}
+
 function	VariantLevel(): ReactElement {
 	const	[variant, set_variant] = React.useState(0);
 	const	[refresher, set_refresher] = React.useState(0);

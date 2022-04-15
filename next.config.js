@@ -23,7 +23,7 @@ module.exports = ({
 		**********************************************************************/
 		WEBSITE_URI: 'https://yearn-ui.major.tax/',
 		WEBSITE_NAME: 'yUITemplate',
-		WEBSITE_TITLE: 'Yearn UI Template',
+		WEBSITE_TITLE: 'yWeb',
 		WEBSITE_DESCRIPTION: 'Template used for some Yearn\'s project',
 		PROJECT_GITHUB_URL: 'https://github.com/Major-Eth/yUITemplate',
 

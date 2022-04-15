@@ -19,17 +19,23 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
-function	DocumentationSwitchTheme(): ReactElement {
+export function	SwitchThemeComponent(): ReactElement {
 	const	{theme, switchTheme} = useUI();
+	return (
+		<SwitchTheme
+			theme={theme}
+			switchTheme={switchTheme} />
+	);
+}
+
+function	DocumentationSwitchTheme(): ReactElement {
 
 	return (
 		<section aria-label={'some default section'}>
 			<Card>
 				<h1 className={'mb-2 text-3xl text-typo-primary'}>{'SwitchTheme'}</h1>
 				<div className={'box-gradient-alt'}>
-					<SwitchTheme
-						theme={theme}
-						switchTheme={switchTheme} />
+					<SwitchThemeComponent />
 				</div>
 				<Highlight code={code} />
 

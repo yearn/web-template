@@ -35,6 +35,21 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+export function	CardDetailsComponent(): ReactElement {
+	return (
+		<div className={'w-3/4'}>
+			<Card.Detail
+				summary={(p: unknown): ReactElement => (
+					<Card.Detail.Summary startChildren={<p>{'Hello'}</p>} {...p} />
+				)}>
+				<div className={'text-typo-primary'}>
+					{'Dolore pariatur aut facilis.'}
+				</div>
+			</Card.Detail>
+		</div>
+	);
+}
+
 
 function	DocumentationCard(): ReactElement {
 	return (

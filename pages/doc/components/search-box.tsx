@@ -17,22 +17,26 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+export function	SearchBoxComponent(): ReactElement {
+	const	[searchTerm, set_searchTerm] = React.useState('');
+	return (
+		<div className={'w-3/4'}>
+			<SearchBox
+				ariaLabel={'My Custom SearchBox'}
+				searchTerm={searchTerm}
+				onSearch={(s: string): void => alert(`Searching for ${s}`)}
+				onChange={set_searchTerm} />
+		</div>
+	);
+}
 
 function	DocumentationStatCard(): ReactElement {
-	const	[searchTerm, set_searchTerm] = React.useState('');
-
 	return (
 		<section aria-label={'some default section'}>
 			<Card>
 				<h1 className={'mb-2 text-3xl text-typo-primary'}>{'SearchBox'}</h1>				
 				<div className={'box-gradient-default'}>
-					<div className={'w-3/4'}>
-						<SearchBox
-							ariaLabel={'My Custom SearchBox'}
-							searchTerm={searchTerm}
-							onSearch={(s: string): void => alert(`Searching for ${s}`)}
-							onChange={set_searchTerm} />
-					</div>
+					<SearchBoxComponent />
 				</div>
 				<Highlight code={code} />
 

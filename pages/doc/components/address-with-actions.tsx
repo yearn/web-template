@@ -19,21 +19,27 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+export function	AddressActionComponent(): ReactElement {
+	return (
+		<div className={'w-3/4'}>
+			<Card>
+				<AddressWithActions
+					address={'0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7'}
+					explorer={'https://etherscan.io'}
+					truncate={5}
+					className={'font-mono text-sm text-typo-secondary'} />
+			</Card>
+		</div>
+	);
+}
+
 function	DocumentationAddressWithAction(): ReactElement {
 	return (
 		<section aria-label={'some default section'}>
 			<Card>
 				<h1 className={'mb-2 text-3xl text-typo-primary'}>{'AddressWithActions'}</h1>				
 				<div className={'box-gradient-default'}>
-					<div className={'w-3/4'}>
-						<Card>
-							<AddressWithActions
-								address={'0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7'}
-								explorer={'https://etherscan.io'}
-								truncate={5}
-								className={'font-mono text-sm text-typo-secondary'} />
-						</Card>
-					</div>
+					<AddressActionComponent />
 				</div>
 				<Highlight code={code} />
 

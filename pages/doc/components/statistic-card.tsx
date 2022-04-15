@@ -23,6 +23,22 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+export function	StatsCardComponent(): ReactElement {
+	return (
+		<div className={'w-3/4'}>
+			<StatisticCard.Wrapper>
+				<StatisticCard
+					className={'col-span-6'}
+					label={'TVL'}
+					value={'1 003 $'} />
+				<StatisticCard
+					className={'col-span-6'}
+					label={'Audit Score'}
+					value={'2'} />
+			</StatisticCard.Wrapper>
+		</div>
+	);
+}
 
 function	DocumentationStatCard(): ReactElement {
 	return (

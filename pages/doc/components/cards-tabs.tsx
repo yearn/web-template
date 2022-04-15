@@ -3,7 +3,6 @@ import	{Card}						from	'@majorfi/web-lib/components';
 import	ComponentAPI				from	'components/documentation/ComponentAPI';
 import	Highlight					from	'components/documentation/Highlight';
 
-// The code snippet you want to highlight, as a string
 const code = `
 import	React	from	'react';
 import	{Card}	from	'@majorfi/web-lib/components';
@@ -20,6 +19,19 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+export function	CardTabsComponent(): ReactElement {
+	return (
+		<div className={'w-3/4'}>
+			<Card.Tabs
+				tabs={[
+					{label: 'Details', children: <b>{'I am the first card.'}</b>},
+					{label: 'Reports', children: <p>{'I am the second Tab'}</p>},
+					{label: 'Check', children: <p>{'And a third one?'}</p>}
+				]}
+			/>
+		</div>
+	);
+}
 
 function	DocumentationCard(): ReactElement {
 	return (
@@ -27,15 +39,7 @@ function	DocumentationCard(): ReactElement {
 			<Card>
 				<h1 className={'mb-2 text-3xl text-typo-primary'}>{'Card.Tabs'}</h1>
 				<div className={'box-gradient-default'}>
-					<div className={'w-3/4'}>
-						<Card.Tabs
-							tabs={[
-								{label: 'Details', children: <b>{'I am the first card.'}</b>},
-								{label: 'Reports', children: <p>{'I am the second Tab'}</p>},
-								{label: 'Health Check', children: <p>{'And a third one?'}</p>}
-							]}
-						/>
-					</div>
+					<CardTabsComponent />
 				</div>
 				<Highlight code={code} />
 

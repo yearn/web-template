@@ -7,10 +7,9 @@ import	{WithYearn}							from	'@majorfi/web-lib';
 import	{Header, Navbar}					from	'@majorfi/web-lib/layouts';
 import	{usePrices, useBalances}			from	'@majorfi/web-lib/contexts';
 import	{format}							from	'@majorfi/web-lib/utils';
-import	{AlertError, Hamburger}				from	'@majorfi/web-lib/icons';
+import	{AlertError, Hamburger, Home}		from	'@majorfi/web-lib/icons';
 import	Footer								from	'components/StandardFooter';
 import	IconYearn							from	'components/icons/IconYearn';
-import	IconVault							from	'components/icons/IconVault';
 import	IconHealthcheck						from	'components/icons/IconHealthcheck';
 
 import	'../style.css';
@@ -83,90 +82,13 @@ function	AppWrapper(props: AppProps): ReactElement {
 			route: '/',
 			values: ['/'],
 			label: 'Home',
-			icon: <IconVault  />
+			icon: <Home  />
 		},
 		{
-			route: '/doc',
-			values: ['/doc'],
+			route: '/doc/components',
+			values: ['/doc/components'],
 			label: 'Components',
-			icon: <IconHealthcheck />,
-			options: [
-				{
-					route: '/doc/components/cards',
-					values: ['/doc/components/cards'],
-					label: 'Cards'
-				},
-				{
-					route: '/doc/components/cards-tabs',
-					values: ['/doc/components/cards-tabs'],
-					label: 'Cards.Tabs'
-				},
-				{
-					route: '/doc/components/cards-details',
-					values: ['/doc/components/cards-details'],
-					label: 'Cards.Detail'
-				},
-				{
-					route: '/doc/components/statistic-card',
-					values: ['/doc/components/statistic-card'],
-					label: 'StatisticCard'
-				},
-				{
-					route: '/doc/components/description-list',
-					values: ['/doc/components/description-list'],
-					label: 'DescriptionList'
-				},
-				{
-					route: '/doc/components/alert-banner',
-					values: ['/doc/components/alert-banner'],
-					label: 'AlertBanner'
-				},
-				{
-					route: '/doc/components/alert-box',
-					values: ['/doc/components/alert-box'],
-					label: 'AlertBox'
-				},
-				{
-					route: '/doc/components/search-box',
-					values: ['/doc/components/search-box'],
-					label: 'SearchBox'
-				},
-				{
-					route: '/doc/components/button',
-					values: ['/doc/components/button'],
-					label: 'Button'
-				},
-				{
-					route: '/doc/components/dropdown',
-					values: ['/doc/components/dropdown'],
-					label: 'Dropdown'
-				},
-				{
-					route: '/doc/components/switch',
-					values: ['/doc/components/switch'],
-					label: 'Switch'
-				},
-				{
-					route: '/doc/components/switch-theme',
-					values: ['/doc/components/switch-theme'],
-					label: 'Switch theme'
-				},
-				{
-					route: '/doc/components/address-with-actions',
-					values: ['/doc/components/address-with-actions'],
-					label: 'AddressWithActions'
-				},
-				{
-					route: '/doc/components/txhash-with-actions',
-					values: ['/doc/components/txhash-with-actions'],
-					label: 'TxHashWithActions'
-				},
-				{
-					route: '/doc/components/modal',
-					values: ['/doc/components/modal'],
-					label: 'Modal'
-				}
-			]
+			icon: <IconHealthcheck />
 		},
 		{
 			route: '/doc/icons',

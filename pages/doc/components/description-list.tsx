@@ -22,6 +22,21 @@ export default function	App(): React.ReactElement {
 	);
 }`.trim();
 
+
+export function	DescriptionListComponent(): ReactElement {
+	return (
+		<div className={'w-4/5'}>
+			<Card>
+				<DescriptionList
+					options={[
+						{title: 'API Version', details: '0.4.2'}, 
+						{title: 'Performance fee', details: '80%'}
+					]} />
+			</Card>
+		</div>
+	);
+}
+
 function	DocumentationDescriptionList(): ReactElement {
 	return (
 		<section aria-label={'some default section'}>
