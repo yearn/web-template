@@ -21,11 +21,11 @@ module.exports = ({
 		** Stuff used for the SEO or some related elements, like the title, the
 		** github url etc.
 		**********************************************************************/
-		WEBSITE_URI: 'https://yearn-ui.major.tax/',
-		WEBSITE_NAME: 'yUITemplate',
+		WEBSITE_URI: 'https://web.ycorpo.com/',
+		WEBSITE_NAME: 'yWeb',
 		WEBSITE_TITLE: 'yWeb',
-		WEBSITE_DESCRIPTION: 'Template used for some Yearn\'s project',
-		PROJECT_GITHUB_URL: 'https://github.com/Major-Eth/yUITemplate',
+		WEBSITE_DESCRIPTION: 'Template used for Yearn\'s projects',
+		PROJECT_GITHUB_URL: 'https://github.com/yearn/yearn-template',
 
 		/* 🔵 - Yearn Finance **************************************************
 		** Some config used to control the behaviour of the web library. By
