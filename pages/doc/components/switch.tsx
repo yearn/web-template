@@ -1,11 +1,11 @@
 import	React, {ReactElement}		from	'react';
-import	{Card, Switch}				from	'@majorfi/web-lib/components';
+import	{Card, Switch}				from	'@yearn/web-lib/components';
 import	ComponentAPI				from	'components/documentation/ComponentAPI';
 import	Highlight					from	'components/documentation/Highlight';
 
 const code = `
 import	React		from	'react';
-import	{Dropdown}	from	'@majorfi/web-lib/components';
+import	{Dropdown}	from	'@yearn/web-lib/components';
 
 export default function	App(): React.ReactElement {
 	const	[isEnabled, set_isEnabled] = React.useState(false);

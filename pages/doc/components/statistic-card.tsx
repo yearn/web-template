@@ -1,11 +1,11 @@
 import	React, {ReactElement}		from	'react';
-import	{Card, StatisticCard}		from	'@majorfi/web-lib/components';
+import	{Card, StatisticCard}		from	'@yearn/web-lib/components';
 import	ComponentAPI				from	'components/documentation/ComponentAPI';
 import	Highlight					from	'components/documentation/Highlight';
 
 const code = `
 import	React			from	'react';
-import	{StatisticCard}	from	'@majorfi/web-lib/components';
+import	{StatisticCard}	from	'@yearn/web-lib/components';
 
 export default function	App(): React.ReactElement {
 	return (

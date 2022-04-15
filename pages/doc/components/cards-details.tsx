@@ -1,12 +1,12 @@
 import	React, {ReactElement}		from	'react';
-import	{Card}						from	'@majorfi/web-lib/components';
+import	{Card}						from	'@yearn/web-lib/components';
 import	ComponentAPI				from	'components/documentation/ComponentAPI';
 import	Highlight					from	'components/documentation/Highlight';
 
 // The code snippet you want to highlight, as a string
 const code = `
 import	React	from	'react';
-import	{Card}	from	'@majorfi/web-lib/components';
+import	{Card}	from	'@yearn/web-lib/components';
 
 export default function	App(): React.ReactElement {
 	return (
@@ -24,7 +24,7 @@ export default function	App(): React.ReactElement {
 
 const codeAlt = `
 import	React	from	'react';
-import	{Card}	from	'@majorfi/web-lib/components';
+import	{Card}	from	'@yearn/web-lib/components';
 
 export default function	App(): React.ReactElement {
 	return (
