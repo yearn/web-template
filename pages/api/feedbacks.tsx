@@ -15,7 +15,7 @@ async function	withLinear(req: NextApiRequest, res: NextApiResponse): Promise<vo
 
 async function	withGithub(req: NextApiRequest, res: NextApiResponse): Promise<void> {
 	const	feedbackType = req.body.feedbackType === 'issue' ? 'Issue' : req.body.feedbackType === 'idea' ? 'Idea' : 'Other';
-	axios.post(`https://api.github.com/repos/${process.env.GITHUB_PROJECT_OWNER}/${process.env.GITHUB_PROJECT_REPO}/issues`, {
+	await axios.post(`https://api.github.com/repos/${process.env.GITHUB_PROJECT_OWNER}/${process.env.GITHUB_PROJECT_REPO}/issues`, {
 		owner: process.env.GITHUB_PROJECT_OWNER,
 		repo: process.env.GITHUB_PROJECT_REPO,
 		title: `${feedbackType} - ${req.body.message.slice(0, 20)} ${req.body.message.length > 20 ? '...' : ''}`,
