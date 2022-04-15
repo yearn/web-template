@@ -7,10 +7,9 @@ import	{WithYearn}							from	'@yearn/web-lib';
 import	{Header, Navbar}					from	'@yearn/web-lib/layouts';
 import	{usePrices, useBalances}			from	'@yearn/web-lib/contexts';
 import	{format}							from	'@yearn/web-lib/utils';
-import	{AlertError, Hamburger, Home}		from	'@yearn/web-lib/icons';
+import	{Home, AlertError}					from	'@yearn/web-lib/icons';
 import	Footer								from	'components/StandardFooter';
 import	IconYearn							from	'components/icons/IconYearn';
-import	IconHealthcheck						from	'components/icons/IconHealthcheck';
 
 import	'../style.css';
 
@@ -85,29 +84,10 @@ function	AppWrapper(props: AppProps): ReactElement {
 			icon: <Home  />
 		},
 		{
-			route: '/doc/components',
-			values: ['/doc/components'],
-			label: 'Components',
-			icon: <IconHealthcheck />
-		},
-		{
-			route: '/doc/icons',
-			values: ['/doc/icons'],
-			label: 'Icons',
+			route: '/disclaimer',
+			values: ['/disclaimer'],
+			label: 'Disclaimer',
 			icon: <AlertError />
-		},
-		{
-			route: '/doc/layouts',
-			values: ['/doc/layouts'],
-			label: 'Layouts',
-			icon: <Hamburger />,
-			options: [
-				{
-					route: '/doc/layouts/header',
-					values: ['/doc/layouts/header'],
-					label: 'Header'
-				}
-			]
 		}
 	];
 

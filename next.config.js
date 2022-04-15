@@ -7,8 +7,7 @@ module.exports = ({
 		localeDetection: false
 	},
 	experimental: {
-		concurrentFeatures: true,
-		nextScriptWorkers: true
+		concurrentFeatures: true
 	},
 	plugins: [new Dotenv()],
 	images: {
