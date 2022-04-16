@@ -69,11 +69,42 @@ function	AppHead(): ReactElement {
 	);
 }
 
-function	AppWrapper(props: AppProps): ReactElement {
+function	AppHeader(): ReactElement {
 	const	[shouldDisplayPrice, set_shouldDisplayPrice] = React.useState(true);
-	const	{Component, pageProps, router} = props;
+	const	[tokenPrice, set_tokenPrice] = React.useState('0');
 	const	{prices} = usePrices();
 	const	{balancesOf} = useBalances();
+
+	React.useEffect((): void => {
+		set_tokenPrice(format.amount(Number(prices?.['yearn-finance']?.usd || 0), 2));
+	}, [prices]);
+
+	return (
+		<Header>
+			<div className={'justify-between pr-4 w-full flex-row-center'}>
+				<h1>{process.env.WEBSITE_TITLE}</h1>
+				<div className={'hidden flex-row items-center space-x-6 md:flex'}>
+					<div
+						className={'cursor-pointer'}
+						onClick={(): void => set_shouldDisplayPrice(!shouldDisplayPrice)}>
+						{shouldDisplayPrice ? (
+							<p className={'text-typo-primary-variant'}>
+								{`YFI $ ${tokenPrice}`}
+							</p>
+						) : (
+							<p className={'text-typo-primary-variant'}>
+								{`Balance: ${format.amount(Number(balancesOf?.[YFI_ADDRESS] || 0), 6)} YFI`}
+							</p>
+						)}
+					</div>
+				</div>
+			</div>
+		</Header>
+	);
+}
+
+function	AppWrapper(props: AppProps): ReactElement {
+	const	{Component, pageProps, router} = props;
 
 	const	navbarMenuOptions = [
 		{
@@ -120,26 +151,7 @@ function	AppWrapper(props: AppProps): ReactElement {
 					</div>
 				</div>
 				<div className={'flex flex-col col-span-12 px-4 w-full min-h-[100vh] md:col-span-10'}>
-					<Header>
-						<div className={'justify-between pr-4 w-full flex-row-center'}>
-							<h1>{process.env.WEBSITE_TITLE}</h1>
-							<div className={'hidden flex-row items-center space-x-6 md:flex'}>
-								<div
-									className={'cursor-pointer'}
-									onClick={(): void => set_shouldDisplayPrice(!shouldDisplayPrice)}>
-									{shouldDisplayPrice ? (
-										<p className={'text-typo-primary-variant'}>
-											{`YFI $ ${format.amount(prices?.['yearn-finance']?.usd || 0, 2)}`}
-										</p>
-									) : (
-										<p className={'text-typo-primary-variant'}>
-											{`Balance: ${format.amount(balancesOf?.[YFI_ADDRESS] || 0, 6)} YFI`}
-										</p>
-									)}
-								</div>
-							</div>
-						</div>
-					</Header>
+					<AppHeader />
 					<Component
 						key={router.route}
 						router={props.router}
