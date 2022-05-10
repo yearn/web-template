@@ -80,7 +80,9 @@ function	AppHeader(): ReactElement {
 	}, [prices]);
 
 	return (
-		<Header>
+		<Header
+			shouldUseWallets={process.env.USE_WALLET as unknown as boolean || false}
+			shouldUseNetworks={process.env.USE_NETWORKS as unknown as boolean || false}>
 			<div className={'justify-between pr-4 w-full flex-row-center'}>
 				<h1>{process.env.WEBSITE_TITLE}</h1>
 				<div className={'hidden flex-row items-center space-x-6 md:flex'}>
@@ -138,15 +140,6 @@ function	AppWrapper(props: AppProps): ReactElement {
 							title={'yWeb'}
 							options={navbarMenuOptions}
 							wrapper={<Link passHref href={''} />}>
-							<div className={'flex flex-col mt-auto space-y-2'}>
-								{
-									process.env.USE_FEEDBACKS ? (
-										<button data-feedbackfin-button className={'button-light'}>
-											{'Feedback'}
-										</button>
-									) : null
-								}
-							</div>
 						</Navbar>
 					</div>
 				</div>
