@@ -1,10 +1,2 @@
 /* This will load Tailwindcss + all the overwrite from Yearn lib */
 @import '@yearn/web-lib/dist/style.css';
-
-/* 🔵 - Yearn Finance ******************************************************
-** Shorthand for some group of style used across the application
-**************************************************************************/
-.flex-row-center {@apply flex flex-row items-center;}
-.flex-row-start {@apply flex flex-row items-start;}
-.flex-col-start {@apply flex flex-col items-start;}
-.flex-col-full {@apply flex flex-col w-full h-full;}

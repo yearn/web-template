@@ -12,7 +12,6 @@ import	IconYearn							from	'components/icons/IconYearn';
 
 import	'../style.css';
 
-const		YFI_ADDRESS = '0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e';
 function	AppHead(): ReactElement {
 	return (
 		<>
@@ -95,7 +94,7 @@ function	AppHeader(): ReactElement {
 							</p>
 						) : (
 							<p className={'text-typo-primary-variant'}>
-								{`Balance: ${format.amount(Number(balancesOf?.[YFI_ADDRESS] || 0), 6)} YFI`}
+								{`Balance: ${format.toNormalizedAmount(balancesOf?.['0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e'])} YFI`}
 							</p>
 						)}
 					</div>
@@ -139,8 +138,7 @@ function	AppWrapper(props: AppProps): ReactElement {
 							logo={<IconYearn className={'w-full h-12 text-primary'} />}
 							title={'yWeb'}
 							options={navbarMenuOptions}
-							wrapper={<Link passHref href={''} />}>
-						</Navbar>
+							wrapper={<Link passHref href={''} />} />
 					</div>
 				</div>
 				<div className={'flex flex-col col-span-12 px-4 w-full min-h-[100vh] md:col-span-10'}>
@@ -160,7 +158,18 @@ function	MyApp(props: AppProps): ReactElement {
 	const	{Component, pageProps} = props;
 	
 	return (
-		<WithYearn>
+		<WithYearn
+			options={{
+				ui: {
+					shouldUseDefaultToaster: true,
+					shouldUseTheme: true
+				},
+				web3: {
+					shouldUseStrictChainMode: false,
+					defaultChainID: 1,
+					supportedChainID: [1, 1337]
+				}
+			}}>
 			<AppWrapper
 				Component={Component}
 				pageProps={pageProps}
