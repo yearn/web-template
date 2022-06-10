@@ -1,10 +1,10 @@
-const Dotenv = require('dotenv-webpack');
+const dotenv = require('dotenv-webpack');
 
 module.exports = ({
 	experimental: {
 		concurrentFeatures: true
 	},
-	plugins: [new Dotenv()],
+	plugins: [new dotenv()],
 	images: {
 		domains: [
 			'rawcdn.githack.com'
@@ -39,11 +39,6 @@ module.exports = ({
 		TOKENS: [
 			['0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e', 18, 1]
 		],
-		RPC_URL: {
-			1: process.env.RPC_URL_MAINNET,
-			250: process.env.RPC_URL_FANTOM || 'https://rpc.ftm.tools',
-			42161: process.env.RPC_URL_ARBITRUM || 'https://arbitrum.public-rpc.com'
-		},
 		ALCHEMY_KEY: process.env.ALCHEMY_KEY
 	}
 });

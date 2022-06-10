@@ -1,5 +1,5 @@
 import	React, {ReactElement}	from	'react';
-import	{Card, AlertBanner}		from	'@yearn/web-lib/components';
+import	{Card, Banner, DescriptionList}			from	'@yearn-finance/web-lib/components';
 
 function	ColorBox({color, name}: {color: string, name: string}): ReactElement {
 	return (
@@ -12,83 +12,28 @@ function	ColorBox({color, name}: {color: string, name: string}): ReactElement {
 
 function	ColorPaletteLight(): ReactElement {
 	return (
-		<div className={'mb-10 space-y-8 w-full'}>
-			<div className={'grid grid-cols-3 w-full'}>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Background & Surface'}</h4>
-					<ColorBox color={'bg-background'} name={'--color-background'} />
-					<ColorBox color={'bg-background-variant'} name={'--color-background-variant'} />
-					<ColorBox color={'bg-surface'} name={'--color-surface'} />
-					<ColorBox color={'bg-surface-variant'} name={'--color-surface-variant'} />
+		<div className={'w-full'}>
+			<div className={'flex flex-col gap-2 w-full'}>
+				<h4 className={'mb-2'}>{'How to use'}</h4>
+				<div className={'mb-6 space-y-2'}>
+					<p className={'text-neutral-500'}>
+						{'The web-lib contains components that can be used to build a new web application (website, dashboard, standalone, etc.), focused for the needs of Yearn Finance and the specificities of the web-3 ecosystem.'}
+					</p>
+					<p className={'text-neutral-500'}>
+						{'The Lib is divided in various sub-sections: components, layouts, utils, contexts and hooks. With it, you should have everything you need to start working with Yearn and Ethereum, from the "Connect Wallet" to the designs of the buttons.'}
+					</p>
+					<p className={'text-neutral-500'}>
+						{'You can now start playing by editing the `pages/index.tsx` file.'}
+					</p>
 				</div>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Main colors'}</h4>
-					<ColorBox color={'bg-primary'} name={'--color-primary'} />
-					<ColorBox color={'bg-primary-variant'} name={'--color-primary-variant'} />
-					<ColorBox color={'bg-secondary'} name={'--color-secondary'} />
-					<ColorBox color={'bg-secondary-variant'} name={'--color-secondary-variant'} />
-				</div>
+				<Card variant={'background'}>
+					<DescriptionList
+						options={[
+							{title: 'Web-Lib Repo', details: 'https://web.ycorpo.com/'}, 
+							{title: 'NextJs documentation', details: 'https://nextjs.org/'}
+						]} />
+				</Card>
 			</div>
-
-			<div className={'grid grid-cols-3 w-full'}>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Typo'}</h4>
-					<ColorBox color={'bg-typo-primary'} name={'--color-typo-primary'} />
-					<ColorBox color={'bg-typo-primary-variant'} name={'--color-typo-primary-variant'} />
-					<ColorBox color={'bg-typo-secondary'} name={'--color-typo-secondary'} />
-					<ColorBox color={'bg-typo-secondary-variant'} name={'--color-typo-secondary-variant'} />
-					<ColorBox color={'bg-typo-off'} name={'--color-typo-off'} />
-
-				</div>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Icons'}</h4>
-					<ColorBox color={'bg-icons-primary'} name={'--color-icons-primary'} />
-					<ColorBox color={'bg-icons-variant'} name={'--color-icons-variant'} />
-				</div>
-			</div>
-
-			<div className={'grid grid-cols-3 w-full'}>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Button filled'}</h4>
-					<ColorBox color={'bg-button-filled-primary'} name={'--color-button-filled-primary'} />
-					<ColorBox color={'bg-button-filled-variant'} name={'--color-button-filled-variant'} />
-					<ColorBox color={'bg-button-filled-text'} name={'--color-button-filled-text'} />
-				</div>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Button outlined'}</h4>
-					<ColorBox color={'bg-button-outlined-primary'} name={'--color-button-outlined-primary'} />
-					<ColorBox color={'bg-button-outlined-variant'} name={'--color-button-outlined-variant'} />
-					<ColorBox color={'bg-button-outlined-text'} name={'--color-button-outlined-text'} />
-				</div>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Button Disabled'}</h4>
-					<ColorBox color={'bg-button-disabled-primary'} name={'--color-button-disabled-primary'} />
-					<ColorBox color={'bg-button-disabled-variant'} name={'--color-button-disabled-variant'} />
-					<ColorBox color={'bg-button-disabled-text'} name={'--color-button-disabled-text'} />
-				</div>
-			</div>
-
-			<div className={'grid grid-cols-3 w-full'}>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Warnings'}</h4>
-					<ColorBox color={'bg-alert-warning-primary'} name={'--color-alert-warning-primary'} />
-					<ColorBox color={'bg-alert-warning-secondary'} name={'--color-alert-warning-secondary'} />
-					<ColorBox color={'bg-alert-warning-secondary-variant'} name={'--color-alert-warning-secondary-variant'} />
-				</div>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Errors'}</h4>
-					<ColorBox color={'bg-alert-error-primary'} name={'--color-alert-error-primary'} />
-					<ColorBox color={'bg-alert-error-secondary'} name={'--color-alert-error-secondary'} />
-					<ColorBox color={'bg-alert-error-secondary-variant'} name={'--color-alert-error-secondary-variant'} />
-				</div>
-				<div className={'flex flex-col gap-2 w-full'}>
-					<h4 className={'mb-2'}>{'Critical'}</h4>
-					<ColorBox color={'bg-alert-critical-primary'} name={'--color-alert-critical-primary'} />
-					<ColorBox color={'bg-alert-critical-secondary'} name={'--color-alert-critical-secondary'} />
-					<ColorBox color={'bg-alert-critical-secondary-variant'} name={'--color-alert-critical-secondary-variant'} />
-				</div>
-			</div>
-
 		</div>
 	);
 }
@@ -97,16 +42,13 @@ function	Index(): ReactElement {
 	return (
 		<section aria-label={'some default section'}>
 			<div className={'mb-4'}>
-				<AlertBanner
-					id={'color-system'}
-					title={'Color system'}
-					level={'info'}
-					maxHeight={'max-h-[600px] md:max-h-[300px]'}>
-					<div>
-						<p className={'text-primary'}>{'With this color system, we are trying to mimic some material standard conventions, with the use of `primary`, `secondary`, `variant`, `background`, `surface`, etc. Naming if far from perfect yet, but it\'s a Work In Progress'}</p>
-						<p className={'block mt-4 text-primary'}>{'The colors are set using css variables and can be overrited in your style.css file.'}</p>
+				<Banner title={'Yearn Finance'}>
+					<div className={'space-y-4'}>
+						<p className={'text-primary-500'}>{'Yearn strategists and systems identify the optimal opportunities for yield in the market. Each Vault auto-compounds earned tokens, meaning Yearn reinvests earned tokens to generate additional earnings over time.'}</p>
+						<p className={'text-primary-500'}>{'Vaults are a passive investing strategy, enabling people to put their capital to work via automation.'}</p>
+						<p className={'text-primary-500'}>{'Enjoy the growth market!'}</p>
 					</div>
-				</AlertBanner>
+				</Banner>
 			</div>
 			<Card>
 				<ColorPaletteLight />
