@@ -19,9 +19,8 @@ function	AppHead(): ReactElement {
 				<meta httpEquiv={'X-UA-Compatible'} content={'IE=edge'} />
 				<meta name={'viewport'} content={'width=device-width, initial-scale=1'} />
 				<meta name={'description'} content={process.env.WEBSITE_NAME} />
-				<meta name={'msapplication-TileColor'} content={'#62688F'} />
-				<meta name={'theme-color'} content={'#ffffff'} />
-				<meta charSet={'utf-8'} />
+				<meta name={'msapplication-TileColor'} content={'#000000'} />
+				<meta name={'theme-color'} content={'#FF90A1'} />
 
 				<link rel={'shortcut icon'} type={'image/x-icon'} href={'/favicons/favicon.ico'} />
 				<link rel={'apple-touch-icon'} sizes={'180x180'} href={'/favicons/apple-touch-icon.png'} />
