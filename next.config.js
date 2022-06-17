@@ -31,14 +31,31 @@ module.exports = ({
 		**             to fetch.
 		** USE_PRICE_TRI_CRYPTO: should we fetch the special Tri Crypto token
 		** 			   price? (require blockchain call)
+		** USE_NETWORKS: indicate if the app should be able to change networks
 		**********************************************************************/
 		USE_WALLET: true,
 		USE_PRICES: true,
 		USE_PRICE_TRI_CRYPTO: false,
+		USE_NETWORKS: true,
 		CG_IDS: ['yearn-finance'],
 		TOKENS: [
 			['0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e', 18, 1]
 		],
-		ALCHEMY_KEY: process.env.ALCHEMY_KEY
+
+		/* 🔵 - Yearn Finance **************************************************
+		** Config over the RPC
+		**********************************************************************/
+		WEB_SOCKET_URL: {
+			1: process.env.WS_URL_MAINNET,
+			250: process.env.WS_URL_FANTOM,
+			42161: process.env.WS_URL_ARBITRUM
+		},
+		JSON_RPC_URL: {
+			1: process.env.RPC_URL_MAINNET,
+			250: process.env.RPC_URL_FANTOM,
+			42161: process.env.RPC_URL_ARBITRUM
+		},
+		ALCHEMY_KEY: process.env.ALCHEMY_KEY,
+		INFURA_KEY: process.env.INFURA_KEY
 	}
 });
