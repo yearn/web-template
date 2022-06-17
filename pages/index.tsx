@@ -1,16 +1,7 @@
 import	React, {ReactElement}	from	'react';
 import	{Card, Banner, DescriptionList}			from	'@yearn-finance/web-lib/components';
 
-function	ColorBox({color, name}: {color: string, name: string}): ReactElement {
-	return (
-		<div className={'flex flex-row space-x-2'}>
-			<div className={`overflow-hidden relative aspect-square w-10 border border-background ${color}`} />
-			<b className={'my-2 text-xs'}>{name}</b>
-		</div>
-	);
-}
-
-function	ColorPaletteLight(): ReactElement {
+function	Content(): ReactElement {
 	return (
 		<div className={'w-full'}>
 			<div className={'flex flex-col gap-2 w-full'}>
@@ -51,7 +42,7 @@ function	Index(): ReactElement {
 				</Banner>
 			</div>
 			<Card>
-				<ColorPaletteLight />
+				<Content />
 			</Card>
 		</section>
 	);
