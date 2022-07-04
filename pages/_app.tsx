@@ -4,8 +4,8 @@ import	Link								from	'next/link';
 import	{AppProps}							from	'next/app';
 import	{DefaultSeo}						from	'next-seo';
 import	{Header}							from	'@yearn-finance/web-lib/layouts';
-import	{WithYearn, usePrices, useBalances}	from	'@yearn-finance/web-lib/contexts';
-import	{format}							from	'@yearn-finance/web-lib/utils';
+import	{WithYearn}							from	'@yearn-finance/web-lib/contexts';
+import	{useBalance}						from	'@yearn-finance/web-lib/hooks';
 import	LogoYearn							from	'components/icons/LogoYearn';
 import	Footer								from	'components/StandardFooter';
 
@@ -64,16 +64,13 @@ function	AppHead(): ReactElement {
 
 function	AppHeader(): ReactElement {
 	const	[shouldDisplayPrice, set_shouldDisplayPrice] = React.useState(true);
-	const	[tokenPrice, set_tokenPrice] = React.useState('0');
-	const	{prices} = usePrices();
-	const	{balancesOf} = useBalances();
-
-	React.useEffect((): void => {
-		set_tokenPrice(format.amount(Number(prices?.['yearn-finance']?.usd || 0), 2));
-	}, [prices]);
+	const	{data: YFIBalance} = useBalance({
+		for: '0x7a1057e6e9093da9c1d4c1d049609b6889fc4c67',
+		token: '0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e'
+	});
 
 	return (
-		<Header shouldUseNetworks={true}>
+		<Header>
 			<div className={'justify-between pr-4 w-full flex-row-center'}>
 				<Link href={'/'}>
 					<div className={'flex flex-row items-center space-x-4 cursor-pointer'}>
@@ -86,12 +83,12 @@ function	AppHeader(): ReactElement {
 						className={'cursor-pointer'}
 						onClick={(): void => set_shouldDisplayPrice(!shouldDisplayPrice)}>
 						{shouldDisplayPrice ? (
-							<p className={'text-primary-600'}>
-								{`YFI $ ${tokenPrice}`}
+							<p className={'text-primary-500'}>
+								{`YFI $ ${YFIBalance.normalizedPrice}`}
 							</p>
 						) : (
-							<p className={'text-primary-600'}>
-								{`Balance: ${format.toNormalizedAmount(balancesOf?.['0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e'])} YFI`}
+							<p className={'text-primary-500'}>
+								{`Balance: ${YFIBalance.normalized} YFI`}
 							</p>
 						)}
 					</div>
