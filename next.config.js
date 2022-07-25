@@ -1,9 +1,14 @@
-module.exports = ({
+const withPWA = require('next-pwa')
+
+module.exports = withPWA({
 	images: {
 		domains: [
 			'rawcdn.githack.com',
 			'raw.githubusercontent.com'
 		]
+	},
+	pwa: {
+		dest: 'public'
 	},
 	env: {
 		/* 🔵 - Yearn Finance **************************************************

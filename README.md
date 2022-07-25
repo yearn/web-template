@@ -26,8 +26,9 @@ You can update the `public/manifest.json` file which will be use to handle the m
 - Update `description` with your project description
 - Update `iconPath` with the relative path to your SVG icon (ideally, it should stay as is)
 - Update `locale` for the default language of your project
-- Update `mainColor` with your primary color
 - Update `uri` with the base path of your project.
 - Update `og` with the path to your OG image.
 - Update `twitter` with your twitter handle
-- Update `github` with your project GitHub link
+- Update `github` with your project GitHub link.
+
+More options are available in the `public/manifest.json` file.
