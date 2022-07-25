@@ -7,10 +7,10 @@ function	DisclaimerPage(): ReactElement {
 	return (
 		<div className={'w-full'}>
 			<Card>
-				<div className={'flex flex-row justify-between pb-6 w-full'}>
+				<div className={'flex w-full flex-row justify-between pb-6'}>
 					<h4>{'Disclaimer'}</h4>
 					<Link href={'/'}>
-						<Cross className={'w-6 h-6 transition-colors cursor-pointer text-typo-primary hover:text-typo-primary-variant'} />
+						<Cross className={'text-typo-primary hover:text-typo-primary-variant h-6 w-6 cursor-pointer transition-colors'} />
 					</Link>
 				</div>
 				<div className={'space-y-6 text-justify'}>

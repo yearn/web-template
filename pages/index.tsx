@@ -4,7 +4,7 @@ import	{Card, Banner, DescriptionList}			from	'@yearn-finance/web-lib/components
 function	Content(): ReactElement {
 	return (
 		<div className={'w-full'}>
-			<div className={'flex flex-col gap-2 w-full'}>
+			<div className={'flex w-full flex-col gap-2'}>
 				<h4 className={'mb-2'}>{'How to use'}</h4>
 				<div className={'mb-6 space-y-2'}>
 					<p className={'text-neutral-500'}>

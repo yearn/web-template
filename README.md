@@ -21,18 +21,13 @@ The stack used for this project is the following:
 ### Usage
 
 ##### Don't forget to change meta tags!
-You can change the meta tags in the `next.config.js` file:
-- Update `WEBSITE_URI` with the base path of your project. This will be used for link sharing and OG image.
-- Update `WEBSITE_NAME` and `WEBSITE_TITLE` with your project name
-- Update `WEBSITE_DESCRIPTION` with your project description
-- Update `PROJECT_GITHUB_URL` with your project GitHub link
-
-Then, you can go in `pages/_app.tsx` and update some more info: 
-- Update the content of the meta `theme-color` with your primary color
-- Update `og.jpeg` by the OG image name in the `public` folder
-- Update twitter handle if required
-
-Then, you can update the `public/manifest.json` file which will be use for the Gnosis wallet support:
+You can update the `public/manifest.json` file which will be use to handle the meta tags and for the Gnosis wallet support:
 - Update `name` with your project name
 - Update `description` with your project description
 - Update `iconPath` with the relative path to your SVG icon (ideally, it should stay as is)
+- Update `locale` for the default language of your project
+- Update `mainColor` with your primary color
+- Update `uri` with the base path of your project.
+- Update `og` with the path to your OG image.
+- Update `twitter` with your twitter handle
+- Update `github` with your project GitHub link

@@ -1,5 +1,11 @@
 {
 	"name": "yWeb",
 	"description": "Template used for Yearn's projects",
-	"iconPath": "./favicons/safari-pinned-tab.svg"
+	"iconPath": "./favicons/safari-pinned-tab.svg",
+	"locale": "en-US",
+	"mainColor": "#FF90A1",
+	"uri": "https://web.ycorpo.com/",
+	"og": "https://web.ycorpo.com/og.jpeg",
+	"twitter": "@iearnfinance",
+	"github": "https://github.com/yearn/yearn-template"
 }
