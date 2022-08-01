@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@yearn-finance/web-lib": "^0.11.12",
-		"autoprefixer": "^10.4.7",
+		"autoprefixer": "^10.4.8",
 		"axios": "^0.27.2",
 		"babel-loader": "^8.2.5",
 		"ethcall": "^4.8.2",
