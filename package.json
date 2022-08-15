@@ -2,12 +2,14 @@
 	"name": "yearn-web-template",
 	"version": "0.1.0",
 	"private": false,
+	"homepage": "./",
 	"scripts": {
 		"dev": "next",
 		"dev:ts": "tsc --watch",
 		"start": "tsc && next build && next start",
 		"build": "tsc && next build",
 		"export": "tsc && next build && next export",
+		"exportclean": "(sed -i -e \"s|/favicons|./favicons|g\" ./out/*.html) && (sed -i -e \"s|/_next|./_next|g\" ./out/*.html)",
 		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lintfix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
 	},

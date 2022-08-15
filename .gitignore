@@ -25,6 +25,7 @@ pnpm-debug.log*
 .env
 .next
 .vercel
+out
 tsconfig.tsbuildinfo
 
 
