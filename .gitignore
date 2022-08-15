@@ -25,7 +25,6 @@ pnpm-debug.log*
 .env
 .next
 .vercel
-out
 tsconfig.tsbuildinfo
 
 
@@ -33,6 +32,6 @@ tsconfig.tsbuildinfo
 **/public/sw.js
 **/public/workbox-*.js
 **/public/worker-*.js
-**/public/sw.js.map
-**/public/workbox-*.js.map
-**/public/worker-*.js.map
+**/sw.js.map
+**/workbox-*.js.map
+**/worker-*.js.map
