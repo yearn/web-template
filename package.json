@@ -13,7 +13,7 @@
 		"lintfix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
 	},
 	"dependencies": {
-		"@yearn-finance/web-lib": "^0.12.9",
+		"@yearn-finance/web-lib": "^0.13.0",
 		"autoprefixer": "^10.4.8",
 		"axios": "^0.27.2",
 		"babel-loader": "^8.2.5",
