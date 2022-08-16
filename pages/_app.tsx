@@ -5,7 +5,7 @@ import	{Card, Dropdown, ModalMobileMenu}	from	'@yearn-finance/web-lib/components
 import	{WithYearn, useWeb3}				from	'@yearn-finance/web-lib/contexts';
 import	{useBalance}						from	'@yearn-finance/web-lib/hooks';
 import	{truncateHex}						from	'@yearn-finance/web-lib/utils';
-import	{NetworkEthereum, NetworkFantom,
+import	{NetworkEthereum, NetworkFantom, NetworkOptimism,
 	NetworkArbitrum, Hamburger}				from	'@yearn-finance/web-lib/icons';
 import	LogoYearn							from	'components/icons/LogoYearn';
 import	Footer								from	'components/StandardFooter';
@@ -16,6 +16,7 @@ import	'../style.css';
 
 const	options: any[] = [
 	{icon: <NetworkEthereum />, label: 'Ethereum', value: 1},
+	{icon: <NetworkOptimism />, label: 'Optimism', value: 10},
 	{icon: <NetworkFantom />, label: 'Fantom', value: 250},
 	{icon: <NetworkArbitrum />, label: 'Arbitrum', value: 42161}
 ];
@@ -152,7 +153,7 @@ function	MyApp(props: AppProps): ReactElement {
 					shouldUseWallets: true,
 					shouldUseStrictChainMode: false,
 					defaultChainID: 1,
-					supportedChainID: [1, 250, 42161, 1337, 31337]
+					supportedChainID: [1, 10, 250, 42161, 1337, 31337]
 				}
 			}}>
 			<React.Fragment>
