@@ -8,7 +8,6 @@ on:
 jobs:
   deploy-ipfs:
     runs-on: ${{ matrix.os }}
-    if: "!(startsWith(github.event.head_commit.message, 'badge:'))"
 
     strategy:
       fail-fast: false
@@ -53,8 +52,3 @@ jobs:
           tag_name: "${{ steps.time.outputs.time }}/${{ steps.ipfs.outputs.hash }}"
           release_name: ${{ steps.ipfs.outputs.hash }}
           body: '[ipfs://${{ steps.ipfs.outputs.hash }}](ipfs://${{ steps.ipfs.outputs.hash }}) - [ipfs.io](https://ipfs.io/ipfs/${{ steps.ipfs.outputs.hash }})'
-
-
-
-
-
