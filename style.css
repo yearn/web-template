@@ -1,6 +1,22 @@
 /* This will load Tailwindcss + all the overwrite from Yearn lib */
 @import '@yearn-finance/web-lib/dist/style.css';
 
+:root {
+	--default-rounded: 0rem;
+}
+
+:root body[data-theme="light"] {
+	& .project--kbar-wrapper {
+		@apply rounded-default opacity-60 bg-neutral-300/70 hover:bg-neutral-300 transition-colors;
+	}
+}
+
+:root body[data-theme="dark"] {
+	& .project--kbar-wrapper {
+		@apply rounded-default opacity-60 bg-neutral-100/70 hover:bg-neutral-100 transition-colors;
+	}
+}
+
 .yearn--select-reset {
 	@apply bg-transparent p-0 border-none;
 	&:focus {
@@ -8,7 +24,6 @@
 		box-shadow: none;
 	}
 }
-
 .yearn--select-no-arrow {
 	-webkit-appearance: none;
 	-moz-appearance: none;
