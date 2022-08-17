@@ -10,7 +10,6 @@ import	{NetworkEthereum, NetworkFantom, NetworkOptimism,
 import	LogoYearn							from	'components/icons/LogoYearn';
 import	Footer								from	'components/StandardFooter';
 import	Meta								from	'components/Meta';
-// import	ModalMobileMenu						from	'components/ModalMobileMenu';
 
 import	'../style.css';
 

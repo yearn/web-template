@@ -1,6 +1,6 @@
 {
 	"name": "yearn-web-template",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"private": false,
 	"homepage": "./",
 	"scripts": {
@@ -8,25 +8,19 @@
 		"dev:ts": "tsc --watch",
 		"start": "tsc && next build && next start",
 		"build": "tsc && next build",
-		"export": "tsc && next build && next export",
-		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-		"lintfix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+		"export": "tsc && next build && next export -o ipfs",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx"
 	},
 	"dependencies": {
-		"@yearn-finance/web-lib": "^0.13.0",
-		"autoprefixer": "^10.4.8",
+		"@yearn-finance/web-lib": "^0.13.5",
 		"axios": "^0.27.2",
-		"babel-loader": "^8.2.5",
 		"ethcall": "^4.8.2",
 		"ethers": "^5.6.9",
 		"next": "^12.2.5",
 		"next-pwa": "^5.5.5",
 		"next-seo": "^5.5.0",
-		"postcss-nesting": "^10.1.10",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"sass": "^1.54.4",
-		"sharp": "^0.30.7",
 		"tailwindcss": "^3.1.8"
 	},
 	"devDependencies": {
@@ -42,9 +36,14 @@
 		"eslint-plugin-react": "^7.30.1",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-tailwindcss": "^3.6.0",
+		"babel-loader": "^8.2.5",
+		"sharp": "^0.30.7",
+		"sass": "^1.54.4",
 		"postcss": "^8.4.16",
 		"postcss-import": "^14.1.0",
+		"postcss-nesting": "^10.1.10",
 		"ts-loader": "^9.3.1",
+		"autoprefixer": "^10.4.8",
 		"typescript": "^4.7.4"
 	}
 }

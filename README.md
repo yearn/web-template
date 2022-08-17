@@ -20,7 +20,7 @@ The stack used for this project is the following:
 
 ### Usage
 
-##### Don't forget to change meta tags!
+##### Meta tags and Meta Data
 You can update the `public/manifest.json` file which will be use to handle the meta tags and for the Gnosis wallet support:
 - Update `name` with your project name
 - Update `description` with your project description
@@ -32,3 +32,10 @@ You can update the `public/manifest.json` file which will be use to handle the m
 - Update `github` with your project GitHub link.
 
 More options are available in the `public/manifest.json` file.
+
+##### IPFS deployement
+By default, IPFS auto deployments are disabled. You can enable the workflow by editing the `.github/workflows/ipfs.yml` file, un-commenting lines 5-6, enabling an IPFS deployment each time a push occurs on the `main` branch.  
+Otherwise, you can go in actions and run the `ipfs` action.  
+Two environment variables are required to make it work, which are configurable in your Github Project Secret Variables:
+- `IPFS_HOST`: the host of the IPFS node
+- `IPFS_PORT`: the port of the IPFS node

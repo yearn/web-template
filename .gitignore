@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+ipfs
 
 
 # local env files
@@ -29,9 +30,6 @@ tsconfig.tsbuildinfo
 
 
 # Auto Generated PWA files
-**/public/sw.js
-**/public/workbox-*.js
-**/public/worker-*.js
 **/sw.js.map
 **/workbox-*.js.map
 **/worker-*.js.map
