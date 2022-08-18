@@ -3,6 +3,7 @@ const withPWA = require('next-pwa');
 const {PHASE_EXPORT} = require('next/constants');
 
 module.exports = (phase) => withPWA({
+	assetPrefix: process.env.IPFS_BUILD === 'true' || phase === PHASE_EXPORT ? './' : '/',
 	experimental: {
 		images: {
 			unoptimized: process.env.IPFS_BUILD === 'true' || phase === PHASE_EXPORT //Exporting image does not support optimization
@@ -16,7 +17,7 @@ module.exports = (phase) => withPWA({
 	},
 	pwa: {
 		dest: 'public',
-		disable: process.env.NODE_ENV === 'development'
+		disable: process.env.NODE_ENV !== 'production'
 	},
 	env: {
 		/* 🔵 - Yearn Finance **************************************************
@@ -36,6 +37,5 @@ module.exports = (phase) => withPWA({
 		},
 		ALCHEMY_KEY: process.env.ALCHEMY_KEY,
 		INFURA_KEY: process.env.INFURA_KEY
-	},
-	assetPrefix: './'
+	}
 });
