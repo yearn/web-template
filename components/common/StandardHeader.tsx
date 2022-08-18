@@ -46,7 +46,7 @@ function	StandardHeader({
 	}
 
 	return (
-		<header className={'sticky top-0 z-30 mx-auto mb-0 flex w-full max-w-[1200px] flex-col p-0 md:relative md:py-4'}>
+		<header className={'sticky top-0 z-30 mx-auto mb-0 flex w-full max-w-6xl flex-col !p-0 md:relative md:!p-4'}>
 			<Card className={'flex h-auto items-center justify-between md:h-20'}>
 				<div className={'flex w-full flex-row items-center'}>
 					<div className={'mr-4 flex w-full items-center justify-between'}>

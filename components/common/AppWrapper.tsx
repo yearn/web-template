@@ -51,6 +51,13 @@ function	AppWrapper(props: AppProps): ReactElement {
 		keywords: 'home',
 		section: 'Navigation',
 		perform: async (): Promise<boolean> => router.push('/')
+	}, {
+		id: 'settingsActions',
+		name: 'Settings',
+		shortcut: ['s'],
+		keywords: 'settings configuration config',
+		section: 'Navigation',
+		perform: async (): Promise<boolean> => router.push('/settings')
 	}];
 
 	return (
