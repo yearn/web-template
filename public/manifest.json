@@ -7,8 +7,7 @@
 	"uri": "https://web.ycorpo.com/",
 	"og": "https://web.ycorpo.com/og.jpeg",
 	"twitter": "@iearnfinance",
-	"github": "https://github.com/yearn/yearn-template",
-
+	"github": "https://github.com/yearn/web-template",
 	"icons": [
 		{
 			"src": "./favicons/android-icon-192x192.png",
