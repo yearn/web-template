@@ -23,7 +23,7 @@ function	WithLayout(props: AppProps): ReactElement {
 				shouldUseNetworks={true}
 				shouldUseWallets={true} />
 			<div id={'app'} className={'mx-auto mb-0 flex w-full max-w-6xl flex-col pt-6 md:pt-0'}>
-				<AnimatePresence exitBeforeEnter>
+				<AnimatePresence mode={'wait'}>
 					<motion.div
 						key={router.asPath}
 						initial={'initial'}
