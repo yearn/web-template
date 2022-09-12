@@ -21,12 +21,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 12
+          node-version: 16
 
-      - name: Install Node.js dependencies
-        run: npm ci
+      - name: Install project dependencies
+        run: yarn --prefer-offline
+        id: install
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
