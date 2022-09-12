@@ -39,3 +39,9 @@ Otherwise, you can go in actions and run the `ipfs` action.
 Two environment variables are required to make it work, which are configurable in your Github Project Secret Variables:
 - `IPFS_HOST`: the host of the IPFS node
 - `IPFS_PORT`: the port of the IPFS node
+
+##### Run with Docker
+This project can be run with Docker.
+1. Build the image: `docker build -t [name-of-your-container] .`
+2. Run the container: `docker run -p 3000:3000 [name-of-your-container]`
+3. Open the browser and navigate to `http://localhost:3000`
