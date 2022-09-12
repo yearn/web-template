@@ -1,11 +1,11 @@
-import	React, {ReactElement}				from	'react';
-import	{AppProps}							from	'next/app';
-import	{KBarProvider}						from	'kbar';
-import	{AnimatePresence, motion}			from	'framer-motion';
-import	Header								from	'components/common/StandardHeader';
-import	Footer								from	'components/common/StandardFooter';
-import	Meta								from	'components/common/Meta';
-import	KBar								from	'components/common/Kbar';
+import React, {ReactElement} from 'react';
+import {AppProps} from 'next/app';
+import {KBarProvider} from 'kbar';
+import {AnimatePresence, motion} from 'framer-motion';
+import Header from 'components/common/StandardHeader';
+import Footer from 'components/common/StandardFooter';
+import Meta from 'components/common/Meta';
+import KBar from 'components/common/Kbar';
 
 const transition = {duration: 0.3, ease: [0.17, 0.67, 0.83, 0.67]};
 const thumbnailVariants = {

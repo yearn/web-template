@@ -1,4 +1,4 @@
-import	React, {ReactElement}				from	'react';
+import	React, {ReactElement, useEffect, useState}				from	'react';
 import	Link								from	'next/link';
 import	{Card, Dropdown, ModalMobileMenu}	from	'@yearn-finance/web-lib/components';
 import	{useWeb3}							from	'@yearn-finance/web-lib/contexts';
@@ -8,7 +8,13 @@ import	{Hamburger, NetworkArbitrum, NetworkEthereum,
 import	LogoYearn							from	'components/icons/LogoYearn';
 import	KBarButton							from	'components/common/KBarButton';
 
-const	options: any[] = [
+type	TOptions = {
+	icon: ReactElement;
+	label: string;
+	value: number;
+}
+
+const	options: TOptions[] = [
 	{icon: <NetworkEthereum />, label: 'Ethereum', value: 1},
 	{icon: <NetworkOptimism />, label: 'Optimism', value: 10},
 	{icon: <NetworkFantom />, label: 'Fantom', value: 250},
@@ -20,11 +26,11 @@ function	StandardHeader({
 	shouldUseNetworks = true
 }): ReactElement {
 	const	{chainID, onSwitchChain, isActive, address, ens, openLoginModal, onDesactivate} = useWeb3();
-	const	[walletIdentity, set_walletIdentity] = React.useState('Connect wallet');
-	const	[selectedOption, set_selectedOption] = React.useState(options[0]);
-	const	[hasMobileMenu, set_hasMobileMenu] = React.useState(false);
+	const	[walletIdentity, set_walletIdentity] = useState('Connect wallet');
+	const	[selectedOption, set_selectedOption] = useState(options[0]);
+	const	[hasMobileMenu, set_hasMobileMenu] = useState(false);
 
-	React.useEffect((): void => {
+	useEffect((): void => {
 		if (!isActive && address) {
 			set_walletIdentity('Invalid network');
 		} else if (ens) {
@@ -36,7 +42,7 @@ function	StandardHeader({
 		}
 	}, [ens, address, isActive]);
 
-	React.useEffect((): void => {
+	useEffect((): void => {
 		const	_selectedOption = options.find((e): boolean => e.value === Number(chainID)) || options[0];
 		set_selectedOption(_selectedOption);
 	}, [chainID, isActive]);
@@ -77,7 +83,7 @@ function	StandardHeader({
 								defaultOption={options[0]}
 								options={options}
 								selected={selectedOption}
-								onSelect={(option: any): void => onSwitchChain(option.value as number, true)} />
+								onSelect={(option: TOptions): void => onSwitchChain(option.value as number, true)} />
 						</div>
 					) : null}
 					{shouldUseWallets ? (

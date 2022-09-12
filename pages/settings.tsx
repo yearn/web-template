@@ -1,6 +1,6 @@
-import	React, {ReactElement}	from	'react';
-import	{Card}					from	'@yearn-finance/web-lib/components';
-import	{useSettings}			from	'@yearn-finance/web-lib/contexts';
+import React, {ReactElement, useMemo, useState} from 'react';
+import {Card} from '@yearn-finance/web-lib/components';
+import {useSettings} from '@yearn-finance/web-lib/contexts';
 
 type TWrappedInput = {
 	title: string;
@@ -10,9 +10,9 @@ type TWrappedInput = {
 }
 
 function	WrappedInput({title, caption, initialValue, onSave}: TWrappedInput): ReactElement {
-	const	[isFocused, set_isFocused] = React.useState(false);
-	const	[value, set_value] = React.useState(initialValue);
-	const	isInitialValue = React.useMemo((): boolean => value === initialValue, [value, initialValue]);
+	const	[isFocused, set_isFocused] = useState(false);
+	const	[value, set_value] = useState(initialValue);
+	const	isInitialValue = useMemo((): boolean => value === initialValue, [value, initialValue]);
 
 	return (
 		<label>
@@ -46,7 +46,7 @@ function	WrappedInput({title, caption, initialValue, onSave}: TWrappedInput): Re
 
 function	SectionRPCEndpoints(): ReactElement {
 	const	{onUpdateNetworks} = useSettings();
-	const	[, set_nonce] = React.useState(0);
+	const	[, set_nonce] = useState(0);
 
 	return (
 		<Card>
@@ -101,7 +101,7 @@ function	SectionRPCEndpoints(): ReactElement {
 
 function	SectionSubGraphEndpoints(): ReactElement {
 	const	{onUpdateNetworks, networks} = useSettings();
-	const	[, set_nonce] = React.useState(0);
+	const	[, set_nonce] = useState(0);
 
 	return (
 		<Card>
@@ -156,7 +156,7 @@ function	SectionSubGraphEndpoints(): ReactElement {
 
 function	SectionExplorerBaseURI(): ReactElement {
 	const	{onUpdateNetworks, networks} = useSettings();
-	const	[, set_nonce] = React.useState(0);
+	const	[, set_nonce] = useState(0);
 
 	return (
 		<Card>
@@ -211,7 +211,7 @@ function	SectionExplorerBaseURI(): ReactElement {
 
 function	SectionOracleAddress(): ReactElement {
 	const	{onUpdateNetworks, networks} = useSettings();
-	const	[, set_nonce] = React.useState(0);
+	const	[, set_nonce] = useState(0);
 
 	return (
 		<Card>

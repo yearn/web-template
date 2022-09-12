@@ -1,4 +1,4 @@
-import	React, {ReactElement}		from	'react';
+import	React, {ReactElement, forwardRef, useMemo}		from	'react';
 import {
 	ActionId,
 	ActionImpl,
@@ -40,12 +40,12 @@ const groupNameStyle = {
 };
 
 // eslint-disable-next-line react/display-name
-const ResultItem = React.forwardRef((
+const ResultItem = forwardRef((
 	{action, active, currentRootActionId}:
 	{action: ActionImpl; active: boolean; currentRootActionId: ActionId;},
 	ref: React.Ref<HTMLDivElement>
 ): ReactElement => {
-	const ancestors = React.useMemo((): unknown => {
+	const ancestors = useMemo((): unknown => {
 		if (!currentRootActionId) return action.ancestors;
 		const index = action.ancestors.findIndex((ancestor: any): any => ancestor.id === currentRootActionId);
 		// +1 removes the currentRootAction; e.g.
