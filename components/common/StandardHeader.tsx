@@ -3,8 +3,8 @@ import	Link								from	'next/link';
 import	{Card, Dropdown, ModalMobileMenu}	from	'@yearn-finance/web-lib/components';
 import	{useWeb3}							from	'@yearn-finance/web-lib/contexts';
 import	{truncateHex}						from	'@yearn-finance/web-lib/utils';
-import	{NetworkEthereum, NetworkFantom, NetworkOptimism,
-	NetworkArbitrum, Hamburger}				from	'@yearn-finance/web-lib/icons';
+import	{Hamburger, NetworkArbitrum, NetworkEthereum,
+	NetworkFantom, NetworkOptimism}				from	'@yearn-finance/web-lib/icons';
 import	LogoYearn							from	'components/icons/LogoYearn';
 import	KBarButton							from	'components/common/KBarButton';
 

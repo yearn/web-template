@@ -24,7 +24,8 @@ module.exports = {
 	'plugins': [
 		'@typescript-eslint',
 		'react',
-		'tailwindcss'
+		'tailwindcss',
+		'unused-imports'
 	],
 	'settings': {
 		'react': {
@@ -46,6 +47,16 @@ module.exports = {
 		'react/jsx-curly-brace-presence': ['error', {'props': 'always', 'children': 'always'}],
 		'semi': 'error',
 		'tailwindcss/no-custom-classname': 0,
+		'unused-imports/no-unused-imports': 'error',
+		'unused-imports/no-unused-vars': ['warn', {
+			'vars': 'all',
+			'varsIgnorePattern': '^_',
+			'args': 'after-used',
+			'argsIgnorePattern': '^_'
+		}],
+		'sort-imports': ['error', {
+			'ignoreDeclarationSort': true
+		}],
 		'@typescript-eslint/no-var-requires': 0,
 		'@typescript-eslint/no-unused-vars': 2,
 		'@typescript-eslint/array-type': ['error', {'default': 'array'}],

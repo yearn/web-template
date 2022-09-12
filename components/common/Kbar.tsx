@@ -1,13 +1,13 @@
 import	React, {ReactElement}		from	'react';
 import {
 	ActionId,
+	ActionImpl,
 	KBarAnimator,
 	KBarPortal,
 	KBarPositioner,
-	KBarSearch,
 	KBarResults,
-	useMatches,
-	ActionImpl
+	KBarSearch,
+	useMatches
 } from 'kbar';
 
 const searchStyle = {
