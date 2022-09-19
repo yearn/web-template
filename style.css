@@ -1,17 +1,13 @@
 /* This will load Tailwindcss + all the overwrite from Yearn lib */
-@import '@yearn-finance/web-lib/dist/style.css';
+@import '@yearn-finance/web-lib/dist/style.next.css';
 
 :root {
-	--default-rounded: 0rem;
-}
-
-:root body[data-theme="light"] {
 	& .project--kbar-wrapper {
 		@apply rounded-default opacity-60 bg-neutral-300/70 hover:bg-neutral-300 transition-colors;
 	}
 }
 
-:root body[data-theme="dark"] {
+:root.dark {
 	& .project--kbar-wrapper {
 		@apply rounded-default opacity-60 bg-neutral-100/70 hover:bg-neutral-100 transition-colors;
 	}
@@ -58,12 +54,5 @@
 
 	& ~ .yearn--input-caption {
 		@apply mt-1 pl-2 text-xs transition-colors text-neutral-600
-	}
-}
-
-
-:root body[data-theme="dark"] {
-	& .yearn--input-caption {
-		@apply text-neutral-700
 	}
 }
