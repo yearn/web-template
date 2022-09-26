@@ -40,6 +40,8 @@ class MyDocument extends Document {
 			<Html lang={'en'}>
 				<Head>
 					<script dangerouslySetInnerHTML={{__html: modeScript}} />
+					<link rel={'preconnect'} href={'https://brand.yearn.finance'} crossOrigin={'true'} />
+					<link href={'https://brand.yearn.finance/fonts/fonts.css'} rel={'stylesheet'} />
 				</Head>
 				<body className={'bg-neutral-200 transition-colors duration-150'}>
 					<Main />
