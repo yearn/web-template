@@ -45,35 +45,47 @@ module.exports = {
 		'quotes': [2, 'single', {'avoidEscape': true}],
 		'object-curly-spacing': [2, 'never'],
 		'array-bracket-spacing': [2, 'never'],
-		'react/jsx-curly-brace-presence': ['error', {'props': 'always', 'children': 'always'}],
 		'semi': 'error',
 		'import/no-named-as-default-member': 2,
 		'tailwindcss/no-custom-classname': 0,
+		'object-property-newline': ['error', {'allowMultiplePropertiesPerLine': true}],
+		'array-bracket-newline': ['error', {'multiline': true}],
+		'react/jsx-curly-brace-presence': ['error', {'props': 'always', 'children': 'always'}],
+		'react/jsx-first-prop-new-line': ['error', 'multiline'],
+		'react/jsx-max-props-per-line': ['error', {'maximum': {'single': 2, 'multi': 1}}],
+		'react/jsx-closing-tag-location': 2,
 		'unused-imports/no-unused-imports': 'error',
-		'unused-imports/no-unused-vars': ['warn', {
-			'vars': 'all',
-			'varsIgnorePattern': '^_',
-			'args': 'after-used',
-			'argsIgnorePattern': '^_'
-		}],
-		'sort-imports': ['error', {
-			'ignoreDeclarationSort': true
-		}],
+		'unused-imports/no-unused-vars': [
+			'warn', {
+				'vars': 'all',
+				'varsIgnorePattern': '^_',
+				'args': 'after-used',
+				'argsIgnorePattern': '^_'
+			}
+		],
+		'sort-imports': [
+			'error', {
+				'ignoreDeclarationSort': true
+			}
+		],
 		'@typescript-eslint/no-var-requires': 0,
 		'@typescript-eslint/no-unused-vars': 2,
 		'@typescript-eslint/array-type': ['error', {'default': 'array'}],
 		'@typescript-eslint/consistent-type-assertions': ['error', {'assertionStyle': 'as', 'objectLiteralTypeAssertions': 'never'}],
 		'@typescript-eslint/consistent-type-definitions': ['error', 'type'],
 		'@typescript-eslint/consistent-indexed-object-style': ['error', 'index-signature'],
-		'@typescript-eslint/explicit-function-return-type': ['error', {
-			'allowExpressions': false,
-			'allowTypedFunctionExpressions': false,
-			'allowHigherOrderFunctions': false,
-			'allowDirectConstAssertionInArrowFunctions': false,
-			'allowConciseArrowFunctionExpressionsStartingWithVoid': false,
-			'allowedNames': []
-		}],
-		'@typescript-eslint/naming-convention': ['error',
+		'@typescript-eslint/explicit-function-return-type': [
+			'error', {
+				'allowExpressions': false,
+				'allowTypedFunctionExpressions': false,
+				'allowHigherOrderFunctions': false,
+				'allowDirectConstAssertionInArrowFunctions': false,
+				'allowConciseArrowFunctionExpressionsStartingWithVoid': false,
+				'allowedNames': []
+			}
+		],
+		'@typescript-eslint/naming-convention': [
+			'error',
 			{'selector': 'default', 'format': ['camelCase']},
 			{'selector': 'function', 'format': ['camelCase', 'PascalCase']},
 			
@@ -96,10 +108,12 @@ module.exports = {
 		'@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
 		'@typescript-eslint/no-unnecessary-qualifier': 'error',
 		'@typescript-eslint/no-unnecessary-type-arguments': 'error',
-		'@typescript-eslint/no-unnecessary-boolean-literal-compare': ['error', {
-			'allowComparingNullableBooleansToTrue': false,
-			'allowComparingNullableBooleansToFalse': false
-		}],
+		'@typescript-eslint/no-unnecessary-boolean-literal-compare': [
+			'error', {
+				'allowComparingNullableBooleansToTrue': false,
+				'allowComparingNullableBooleansToFalse': false
+			}
+		],
 		'@typescript-eslint/prefer-for-of': 'error',
 		'@typescript-eslint/prefer-function-type': 'error',
 		'@typescript-eslint/prefer-includes': 'error',

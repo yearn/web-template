@@ -14,33 +14,57 @@ function	Footer(): ReactElement {
 			<Link href={'/disclaimer'}>
 				<p className={'text-typo-secondary cursor-pointer pr-6 text-xs transition-colors hover:text-primary hover:underline'}>{'Disclaimer'}</p>
 			</Link>
-			<a href={'https://docs.yearn.finance'} target={'_blank'} className={'text-typo-secondary pr-6 text-xs transition-colors hover:text-primary hover:underline'} rel={'noreferrer'}>
+			<a
+				href={'https://docs.yearn.finance'}
+				target={'_blank'}
+				className={'text-typo-secondary pr-6 text-xs transition-colors hover:text-primary hover:underline'}
+				rel={'noreferrer'}>
 				{'Documentation'}
 			</a>
-			<a href={'https://gov.yearn.finance/'} target={'_blank'} className={'text-typo-secondary pr-6 text-xs transition-colors hover:text-primary hover:underline'} rel={'noreferrer'}>
+			<a
+				href={'https://gov.yearn.finance/'}
+				target={'_blank'}
+				className={'text-typo-secondary pr-6 text-xs transition-colors hover:text-primary hover:underline'}
+				rel={'noreferrer'}>
 				{'Governance forum'}
 			</a>
-			<a href={'https://github.com/yearn/yearn-security/blob/master/SECURITY.md'} target={'_blank'} className={'text-typo-secondary pr-6 text-xs transition-colors hover:text-primary hover:underline'} rel={'noreferrer'}>
+			<a
+				href={'https://github.com/yearn/yearn-security/blob/master/SECURITY.md'}
+				target={'_blank'}
+				className={'text-typo-secondary pr-6 text-xs transition-colors hover:text-primary hover:underline'}
+				rel={'noreferrer'}>
 				{'Report a vulnerability'}
 			</a>
 
 			<div className={'text-typo-secondary ml-auto cursor-pointer px-2 transition-colors hover:text-primary'}>
-				<a href={'https://twitter.com/iearnfinance'} target={'_blank'} rel={'noreferrer'}>
+				<a
+					href={'https://twitter.com/iearnfinance'}
+					target={'_blank'}
+					rel={'noreferrer'}>
 					<SocialTwitter className={'h-5 w-5'} />
 				</a>
 			</div>
 			<div className={'text-typo-secondary cursor-pointer px-2 transition-colors hover:text-primary'}>
-				<a href={meta.github} target={'_blank'} rel={'noreferrer'}>
+				<a
+					href={meta.github}
+					target={'_blank'}
+					rel={'noreferrer'}>
 					<SocialGithub className={'h-5 w-5'} />
 				</a>
 			</div>
 			<div className={'text-typo-secondary cursor-pointer px-2 transition-colors hover:text-primary'}>
-				<a href={'https://discord.yearn.finance/'} target={'_blank'} rel={'noreferrer'}>
+				<a
+					href={'https://discord.yearn.finance/'}
+					target={'_blank'}
+					rel={'noreferrer'}>
 					<SocialDiscord className={'h-5 w-5'} />
 				</a>
 			</div>
 			<div className={'text-typo-secondary cursor-pointer px-2 transition-colors hover:text-primary'}>
-				<a href={'https://medium.com/iearn'} target={'_blank'} rel={'noreferrer'}>
+				<a
+					href={'https://medium.com/iearn'}
+					target={'_blank'}
+					rel={'noreferrer'}>
 					<SocialMedium className={'h-5 w-5'} />
 				</a>
 			</div>

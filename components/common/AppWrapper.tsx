@@ -44,21 +44,23 @@ function	WithLayout(props: AppProps): ReactElement {
 
 function	AppWrapper(props: AppProps): ReactElement {
 	const	{router} = props;
-	const	initialActions = [{
-		id: 'homeAction',
-		name: 'Home',
-		shortcut: ['h'],
-		keywords: 'home',
-		section: 'Navigation',
-		perform: async (): Promise<boolean> => router.push('/')
-	}, {
-		id: 'settingsActions',
-		name: 'Settings',
-		shortcut: ['s'],
-		keywords: 'settings configuration config',
-		section: 'Navigation',
-		perform: async (): Promise<boolean> => router.push('/settings')
-	}];
+	const	initialActions = [
+		{
+			id: 'homeAction',
+			name: 'Home',
+			shortcut: ['h'],
+			keywords: 'home',
+			section: 'Navigation',
+			perform: async (): Promise<boolean> => router.push('/')
+		}, {
+			id: 'settingsActions',
+			name: 'Settings',
+			shortcut: ['s'],
+			keywords: 'settings configuration config',
+			section: 'Navigation',
+			perform: async (): Promise<boolean> => router.push('/settings')
+		}
+	];
 
 	return (
 		<>
