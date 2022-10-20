@@ -7,12 +7,8 @@ const {PHASE_EXPORT} = require('next/constants');
 
 module.exports = (phase) => withPWA({
 	assetPrefix: process.env.IPFS_BUILD === 'true' || phase === PHASE_EXPORT ? './' : '/',
-	experimental: {
-		images: {
-			unoptimized: process.env.IPFS_BUILD === 'true' || phase === PHASE_EXPORT //Exporting image does not support optimization
-		}
-	},
 	images: {
+		unoptimized: process.env.IPFS_BUILD === 'true' || phase === PHASE_EXPORT, //Exporting image does not support optimization
 		domains: [
 			'rawcdn.githack.com',
 			'raw.githubusercontent.com'
