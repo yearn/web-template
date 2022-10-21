@@ -1,14 +1,12 @@
-import	React, {ReactElement, forwardRef, useMemo}		from	'react';
-import {
-	ActionId,
+import	React, {forwardRef, ReactElement, useMemo}		from	'react';
+import {ActionId,
 	ActionImpl,
 	KBarAnimator,
 	KBarPortal,
 	KBarPositioner,
 	KBarResults,
 	KBarSearch,
-	useMatches
-} from 'kbar';
+	useMatches} from 'kbar';
 
 const searchStyle = {
 	padding: '12px 16px',
@@ -46,7 +44,9 @@ const ResultItem = forwardRef((
 	ref: React.Ref<HTMLDivElement>
 ): ReactElement => {
 	const ancestors = useMemo((): unknown => {
-		if (!currentRootActionId) return action.ancestors;
+		if (!currentRootActionId) {
+			return action.ancestors;
+		}
 		const index = action.ancestors.findIndex((ancestor: any): any => ancestor.id === currentRootActionId);
 		// +1 removes the currentRootAction; e.g.
 		// if we are on the "Set theme" parent action,

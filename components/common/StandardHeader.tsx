@@ -2,11 +2,11 @@ import	React, {ReactElement, useEffect, useState}				from	'react';
 import	Link								from	'next/link';
 import	{Card, Dropdown, ModalMobileMenu}	from	'@yearn-finance/web-lib/components';
 import	{useWeb3}							from	'@yearn-finance/web-lib/contexts';
-import	{truncateHex}						from	'@yearn-finance/web-lib/utils';
 import	{Hamburger, NetworkArbitrum, NetworkEthereum,
 	NetworkFantom, NetworkOptimism}				from	'@yearn-finance/web-lib/icons';
-import	LogoYearn							from	'components/icons/LogoYearn';
+import	{truncateHex}						from	'@yearn-finance/web-lib/utils';
 import	KBarButton							from	'components/common/KBarButton';
+import	LogoYearn							from	'components/icons/LogoYearn';
 
 type	TOptions = {
 	icon: ReactElement;
