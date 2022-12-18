@@ -1,9 +1,12 @@
-import React, {ReactElement} from 'react';
-import Link from 'next/link';
-import {SwitchTheme} from '@yearn-finance/web-lib/components';
-import {useUI} from '@yearn-finance/web-lib/contexts';
-import {SocialDiscord, SocialGithub, SocialMedium, SocialTwitter} from '@yearn-finance/web-lib/icons';
-import meta from 'public/manifest.json';
+import React, {ReactElement}	from 'react';
+import Link						from 'next/link';
+import {SwitchTheme} 			from '@yearn-finance/web-lib/components/SwitchTheme';
+import {useUI} 					from '@yearn-finance/web-lib/contexts/useUI';
+import IconSocialDiscord 		from '@yearn-finance/web-lib/icons/IconSocialDiscord';
+import IconSocialGithub 		from '@yearn-finance/web-lib/icons/IconSocialGithub';
+import IconSocialMedium 		from '@yearn-finance/web-lib/icons/IconSocialMedium';
+import IconSocialTwitter 		from '@yearn-finance/web-lib/icons/IconSocialTwitter';
+import meta 					from 'public/manifest.json';
 
 
 function	Footer(): ReactElement {
@@ -41,7 +44,7 @@ function	Footer(): ReactElement {
 					href={'https://twitter.com/iearnfinance'}
 					target={'_blank'}
 					rel={'noreferrer'}>
-					<SocialTwitter className={'h-5 w-5'} />
+					<IconSocialTwitter className={'h-5 w-5'} />
 				</a>
 			</div>
 			<div className={'text-typo-secondary cursor-pointer px-2 transition-colors hover:text-primary'}>
@@ -49,7 +52,7 @@ function	Footer(): ReactElement {
 					href={meta.github}
 					target={'_blank'}
 					rel={'noreferrer'}>
-					<SocialGithub className={'h-5 w-5'} />
+					<IconSocialGithub className={'h-5 w-5'} />
 				</a>
 			</div>
 			<div className={'text-typo-secondary cursor-pointer px-2 transition-colors hover:text-primary'}>
@@ -57,7 +60,7 @@ function	Footer(): ReactElement {
 					href={'https://discord.yearn.finance/'}
 					target={'_blank'}
 					rel={'noreferrer'}>
-					<SocialDiscord className={'h-5 w-5'} />
+					<IconSocialDiscord className={'h-5 w-5'} />
 				</a>
 			</div>
 			<div className={'text-typo-secondary cursor-pointer px-2 transition-colors hover:text-primary'}>
@@ -65,7 +68,7 @@ function	Footer(): ReactElement {
 					href={'https://medium.com/iearn'}
 					target={'_blank'}
 					rel={'noreferrer'}>
-					<SocialMedium className={'h-5 w-5'} />
+					<IconSocialMedium className={'h-5 w-5'} />
 				</a>
 			</div>
 			<div className={'pl-3'}>

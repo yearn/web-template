@@ -1,5 +1,7 @@
 import React, {ReactElement} from 'react';
-import {Banner, Card, DescriptionList} from '@yearn-finance/web-lib/components';
+import {Banner} from '@yearn-finance/web-lib/components/Banner';
+import {Card} from '@yearn-finance/web-lib/components/Card';
+import {DescriptionList} from '@yearn-finance/web-lib/components/DescriptionList';
 
 function	Content(): ReactElement {
 	return (
