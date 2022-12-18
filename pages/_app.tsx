@@ -1,7 +1,9 @@
-import React, {ReactElement} from 'react';
-import {AppProps} from 'next/app';
-import {WithYearn} from '@yearn-finance/web-lib/contexts/WithYearn';
+import React from 'react';
 import AppWrapper from 'components/common/AppWrapper';
+import {WithYearn} from '@yearn-finance/web-lib/contexts/WithYearn';
+
+import type {AppProps} from 'next/app';
+import type {ReactElement} from 'react';
 
 import	'../style.css';
 

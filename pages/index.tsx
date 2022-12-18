@@ -1,7 +1,9 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {Banner} from '@yearn-finance/web-lib/components/Banner';
 import {Card} from '@yearn-finance/web-lib/components/Card';
 import {DescriptionList} from '@yearn-finance/web-lib/components/DescriptionList';
+
+import type {ReactElement} from 'react';
 
 function	Content(): ReactElement {
 	return (

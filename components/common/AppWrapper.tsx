@@ -1,12 +1,14 @@
-import React, {ReactElement} from 'react';
-import {AppProps} from 'next/app';
+import React from 'react';
+import Link from 'next/link';
 import KBar from 'components/common/Kbar';
 import Meta from 'components/common/Meta';
 import Footer from 'components/common/StandardFooter';
-import Header from '@yearn-finance/web-lib/layouts/Header.next';
-import {KBarProvider} from 'kbar';
-import Link from 'next/link';
 import LogoYearn from 'components/icons/LogoYearn';
+import {KBarProvider} from 'kbar';
+import Header from '@yearn-finance/web-lib/layouts/Header.next';
+
+import type {AppProps} from 'next/app';
+import type {ReactElement} from 'react';
 
 function	WithLayout(props: AppProps): ReactElement {
 	const	{Component, pageProps, router} = props;
@@ -17,11 +19,11 @@ function	WithLayout(props: AppProps): ReactElement {
 				<Header
 					linkComponent={<Link href={''} />}
 					currentPathName={router.pathname}
-					onOpenMenuMobile={() => {}}
+					onOpenMenuMobile={(): void => undefined}
 					nav={[
 						{path: '/', label: 'Home'},
 						{path: '/foo', label: 'Foo'},
-						{path: '/bar', label: 'Bar'},
+						{path: '/bar', label: 'Bar'}
 					]}
 					logo={<LogoYearn className={'h-8 w-8'} />}/>
 				<Component

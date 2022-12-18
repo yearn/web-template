@@ -1,7 +1,9 @@
-import React, {ReactElement, useMemo, useState} from 'react';
+import React, {useMemo, useState} from 'react';
+import {isAddress} from 'utils/types/isAddress';
 import {Card} from '@yearn-finance/web-lib/components/Card';
 import {useSettings} from '@yearn-finance/web-lib/contexts/useSettings';
-import { isAddress } from 'utils/types/isAddress';
+
+import type {ReactElement} from 'react';
 
 type TWrappedInput = {
 	title: string;

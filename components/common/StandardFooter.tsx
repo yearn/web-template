@@ -1,12 +1,14 @@
-import React, {ReactElement}	from 'react';
+import React	from 'react';
 import Link						from 'next/link';
+import meta 					from 'public/manifest.json';
 import {SwitchTheme} 			from '@yearn-finance/web-lib/components/SwitchTheme';
 import {useUI} 					from '@yearn-finance/web-lib/contexts/useUI';
 import IconSocialDiscord 		from '@yearn-finance/web-lib/icons/IconSocialDiscord';
 import IconSocialGithub 		from '@yearn-finance/web-lib/icons/IconSocialGithub';
 import IconSocialMedium 		from '@yearn-finance/web-lib/icons/IconSocialMedium';
 import IconSocialTwitter 		from '@yearn-finance/web-lib/icons/IconSocialTwitter';
-import meta 					from 'public/manifest.json';
+
+import type {ReactElement} from 'react';
 
 
 function	Footer(): ReactElement {

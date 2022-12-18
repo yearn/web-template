@@ -1,7 +1,9 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import Head from 'next/head';
 import {DefaultSeo} from 'next-seo';
 import meta from 'public/manifest.json';
+
+import type {ReactElement} from 'react';
 
 function	Meta(): ReactElement {
 	return (
