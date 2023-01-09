@@ -1,6 +1,9 @@
-import React, {ReactElement, useMemo, useState} from 'react';
-import {Card} from '@yearn-finance/web-lib/components';
-import {useSettings} from '@yearn-finance/web-lib/contexts';
+import React, {useMemo, useState} from 'react';
+import {isAddress} from 'utils/types/isAddress';
+import {Card} from '@yearn-finance/web-lib/components/Card';
+import {useSettings} from '@yearn-finance/web-lib/contexts/useSettings';
+
+import type {ReactElement} from 'react';
 
 type TWrappedInput = {
 	title: string;
@@ -42,7 +45,6 @@ function	WrappedInput({title, caption, initialValue, onSave}: TWrappedInput): Re
 		</label>
 	);
 }
-
 
 function	SectionRPCEndpoints(): ReactElement {
 	const	{onUpdateNetworks} = useSettings();
@@ -228,8 +230,10 @@ function	SectionOracleAddress(): ReactElement {
 						caption={'Explorer Base URL for the Ethereum Mainnet chain (chainID: 1).'}
 						initialValue={networks[1].lensAddress}
 						onSave={(value): void => {
-							onUpdateNetworks({1: {lensAddress: value}});
-							set_nonce((n: number): number => n + 1);
+							if (isAddress(value)) {
+								onUpdateNetworks({1: {lensAddress: value}});
+								set_nonce((n: number): number => n + 1);
+							}
 						}} />
 
 					<WrappedInput
@@ -237,8 +241,10 @@ function	SectionOracleAddress(): ReactElement {
 						caption={'Explorer Base URL for the Optimism chain (chainID: 10).'}
 						initialValue={networks[10].lensAddress}
 						onSave={(value): void => {
-							onUpdateNetworks({10: {lensAddress: value}});
-							set_nonce((n: number): number => n + 1);
+							if (isAddress(value)) {
+								onUpdateNetworks({10: {lensAddress: value}});
+								set_nonce((n: number): number => n + 1);
+							}
 						}} />
 
 					<WrappedInput
@@ -246,8 +252,10 @@ function	SectionOracleAddress(): ReactElement {
 						caption={'Explorer Base URL for the Fantom Opera chain (chainID: 250).'}
 						initialValue={networks[250].lensAddress}
 						onSave={(value): void => {
-							onUpdateNetworks({250: {lensAddress: value}});
-							set_nonce((n: number): number => n + 1);
+							if (isAddress(value)) {
+								onUpdateNetworks({250: {lensAddress: value}});
+								set_nonce((n: number): number => n + 1);
+							}
 						}} />
 
 					<WrappedInput
@@ -255,8 +263,10 @@ function	SectionOracleAddress(): ReactElement {
 						caption={'Explorer Base URL for the Arbitrum chain (chainID: 42161).'}
 						initialValue={networks[42161].lensAddress}
 						onSave={(value): void => {
-							onUpdateNetworks({42161: {lensAddress: value}});
-							set_nonce((n: number): number => n + 1);
+							if (isAddress(value)) {
+								onUpdateNetworks({42161: {lensAddress: value}});
+								set_nonce((n: number): number => n + 1);
+							}
 						}} />
 				</div>
 			</div>

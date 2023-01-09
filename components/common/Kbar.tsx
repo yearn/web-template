@@ -1,12 +1,14 @@
-import	React, {forwardRef, ReactElement, useMemo}		from	'react';
-import {ActionId,
-	ActionImpl,
-	KBarAnimator,
+import	React, {forwardRef, useMemo}		from	'react';
+import {KBarAnimator,
 	KBarPortal,
 	KBarPositioner,
 	KBarResults,
 	KBarSearch,
 	useMatches} from 'kbar';
+
+import type {ActionId,
+	ActionImpl} from 'kbar';
+import type {ReactElement} from 'react';
 
 const searchStyle = {
 	padding: '12px 16px',
