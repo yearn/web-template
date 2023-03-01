@@ -5,11 +5,12 @@ import Footer from 'components/common/StandardFooter';
 import LogoYearn from 'components/icons/LogoYearn';
 import Header from '@yearn-finance/web-lib/layouts/Header.next';
 
-import type {AppProps} from 'next/app';
-import type {ReactElement} from 'react';
+import type {AppLayoutProps, AppProps} from 'next/app';
+import type {ReactElement, ReactNode} from 'react';
 
-function	WithLayout(props: AppProps): ReactElement {
+function	WithLayout(props: AppLayoutProps): ReactElement {
 	const	{Component, pageProps, router} = props;
+	const	getLayout = Component.getLayout || ((page: ReactNode): ReactNode => page);
 
 	return (
 		<div id={'app'} className={'mx-auto mb-0 flex max-w-6xl font-aeonik'}>
@@ -24,10 +25,10 @@ function	WithLayout(props: AppProps): ReactElement {
 						{path: '/bar', label: 'Bar'}
 					]}
 					logo={<LogoYearn className={'h-8 w-8'} />}/>
-				<Component
+				{getLayout(<Component
 					key={router.route}
 					router={props.router}
-					{...pageProps} />
+					{...pageProps} />, router)}
 				<Footer />
 			</div>
 		</div>

@@ -1,8 +1,10 @@
 import React from 'react';
+import Wrapper from 'components/common/Wrapper';
 import {Banner} from '@yearn-finance/web-lib/components/Banner';
 import {Card} from '@yearn-finance/web-lib/components/Card';
 import {DescriptionList} from '@yearn-finance/web-lib/components/DescriptionList';
 
+import type {NextRouter} from 'next/router';
 import type {ReactElement} from 'react';
 
 function	Content(): ReactElement {
@@ -51,5 +53,9 @@ function	Index(): ReactElement {
 		</section>
 	);
 }
+
+Index.getLayout = function getLayout(page: ReactElement, router: NextRouter): ReactElement {
+	return <Wrapper router={router}>{page}</Wrapper>;
+};
 
 export default Index;
