@@ -1,18 +1,6 @@
 /* This will load Tailwindcss + all the overwrite from Yearn lib */
 @import '@yearn-finance/web-lib/style.next.css';
 
-:root {
-	& .project--kbar-wrapper {
-		@apply rounded-default opacity-60 bg-neutral-300/70 hover:bg-neutral-300 transition-colors;
-	}
-}
-
-:root.dark {
-	& .project--kbar-wrapper {
-		@apply rounded-default opacity-60 bg-neutral-100/70 hover:bg-neutral-100 transition-colors;
-	}
-}
-
 [type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
     outline: unset;
     outline-offset: unset;
