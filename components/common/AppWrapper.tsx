@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Meta from 'components/common/Meta';
 import Footer from 'components/common/StandardFooter';
 import LogoYearn from 'components/icons/LogoYearn';
-import Header from '@yearn-finance/web-lib/layouts/Header.next';
+import Header from '@yearn-finance/web-lib/components/Header';
 
 import type {AppLayoutProps, AppProps} from 'next/app';
 import type {ReactElement, ReactNode} from 'react';

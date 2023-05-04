@@ -1,8 +1,6 @@
-import React	from 'react';
+import React					from 'react';
 import Link						from 'next/link';
 import meta 					from 'public/manifest.json';
-import {SwitchTheme} 			from '@yearn-finance/web-lib/components/SwitchTheme';
-import {useUI} 					from '@yearn-finance/web-lib/contexts/useUI';
 import IconSocialDiscord 		from '@yearn-finance/web-lib/icons/IconSocialDiscord';
 import IconSocialGithub 		from '@yearn-finance/web-lib/icons/IconSocialGithub';
 import IconSocialMedium 		from '@yearn-finance/web-lib/icons/IconSocialMedium';
@@ -12,8 +10,6 @@ import type {ReactElement} from 'react';
 
 
 function	Footer(): ReactElement {
-	const	{theme, switchTheme} = useUI();
-
 	return (
 		<footer className={'mx-auto mt-auto hidden w-full max-w-6xl flex-row items-center py-8 md:flex'}>
 			<Link href={'/disclaimer'}>
@@ -72,9 +68,6 @@ function	Footer(): ReactElement {
 					rel={'noreferrer'}>
 					<IconSocialMedium className={'h-5 w-5'} />
 				</a>
-			</div>
-			<div className={'pl-3'}>
-				<SwitchTheme theme={theme} switchTheme={switchTheme} />
 			</div>
 		</footer>
 	);

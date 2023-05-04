@@ -1,8 +1,5 @@
 import React from 'react';
 import Wrapper from 'components/common/Wrapper';
-import {Banner} from '@yearn-finance/web-lib/components/Banner';
-import {Card} from '@yearn-finance/web-lib/components/Card';
-import {DescriptionList} from '@yearn-finance/web-lib/components/DescriptionList';
 
 import type {NextRouter} from 'next/router';
 import type {ReactElement} from 'react';
@@ -23,13 +20,6 @@ function	Content(): ReactElement {
 						{'You can now start playing by editing the `pages/index.tsx` file.'}
 					</p>
 				</div>
-				<Card variant={'background'}>
-					<DescriptionList
-						options={[
-							{title: 'Web-Lib Repo', details: 'https://web.ycorpo.com/'}, 
-							{title: 'NextJs documentation', details: 'https://nextjs.org/'}
-						]} />
-				</Card>
 			</div>
 		</div>
 	);
@@ -38,18 +28,7 @@ function	Content(): ReactElement {
 function	Index(): ReactElement {
 	return (
 		<section aria-label={'some default section'}>
-			<div className={'mb-4'}>
-				<Banner title={'Yearn Finance'}>
-					<div className={'space-y-4'}>
-						<p className={'text-primary-500'}>{'Yearn strategists and systems identify the optimal opportunities for yield in the market. Each Vault auto-compounds earned tokens, meaning Yearn reinvests earned tokens to generate additional earnings over time.'}</p>
-						<p className={'text-primary-500'}>{'Vaults are a passive investing strategy, enabling people to put their capital to work via automation.'}</p>
-						<p className={'text-primary-500'}>{'Enjoy the growth market!'}</p>
-					</div>
-				</Banner>
-			</div>
-			<Card>
-				<Content />
-			</Card>
+			<Content />
 		</section>
 	);
 }
