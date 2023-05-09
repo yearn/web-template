@@ -1,7 +1,6 @@
 import React, {useMemo, useState} from 'react';
-import {isAddress} from 'utils/types/isAddress';
-import {Card} from '@yearn-finance/web-lib/components/Card';
 import {useSettings} from '@yearn-finance/web-lib/contexts/useSettings';
+import {isTAddress} from '@yearn-finance/web-lib/utils/isTAddress';
 
 import type {ReactElement} from 'react';
 
@@ -51,7 +50,7 @@ function	SectionRPCEndpoints(): ReactElement {
 	const	[, set_nonce] = useState(0);
 
 	return (
-		<Card>
+		<>
 			<div className={'flex w-full flex-row justify-between pb-4'}>
 				<h4 className={'text-lg font-bold'}>{'RPC Endpoints'}</h4>
 			</div>
@@ -97,7 +96,7 @@ function	SectionRPCEndpoints(): ReactElement {
 						}} />
 				</div>
 			</div>
-		</Card>
+		</>
 	);
 }
 
@@ -106,7 +105,7 @@ function	SectionSubGraphEndpoints(): ReactElement {
 	const	[, set_nonce] = useState(0);
 
 	return (
-		<Card>
+		<>
 			<div className={'flex w-full flex-row justify-between pb-4'}>
 				<h4 className={'text-lg font-bold'}>{'Subgraph Endpoints'}</h4>
 			</div>
@@ -152,7 +151,7 @@ function	SectionSubGraphEndpoints(): ReactElement {
 						}} />
 				</div>
 			</div>
-		</Card>
+		</>
 	);
 }
 
@@ -161,7 +160,7 @@ function	SectionExplorerBaseURI(): ReactElement {
 	const	[, set_nonce] = useState(0);
 
 	return (
-		<Card>
+		<>
 			<div className={'flex w-full flex-row justify-between pb-4'}>
 				<h4 className={'text-lg font-bold'}>{'Explorer Base URL'}</h4>
 			</div>
@@ -207,7 +206,7 @@ function	SectionExplorerBaseURI(): ReactElement {
 						}} />
 				</div>
 			</div>
-		</Card>
+		</>
 	);
 }
 
@@ -216,7 +215,7 @@ function	SectionOracleAddress(): ReactElement {
 	const	[, set_nonce] = useState(0);
 
 	return (
-		<Card>
+		<>
 			<div className={'flex w-full flex-row justify-between pb-4'}>
 				<h4 className={'text-lg font-bold'}>{'Lens Oracle Address'}</h4>
 			</div>
@@ -228,10 +227,10 @@ function	SectionOracleAddress(): ReactElement {
 					<WrappedInput
 						title={''}
 						caption={'Explorer Base URL for the Ethereum Mainnet chain (chainID: 1).'}
-						initialValue={networks[1].lensAddress}
+						initialValue={networks[1].lensOracleAddress}
 						onSave={(value): void => {
-							if (isAddress(value)) {
-								onUpdateNetworks({1: {lensAddress: value}});
+							if (isTAddress(value)) {
+								onUpdateNetworks({1: {lensOracleAddress: value}});
 								set_nonce((n: number): number => n + 1);
 							}
 						}} />
@@ -239,10 +238,10 @@ function	SectionOracleAddress(): ReactElement {
 					<WrappedInput
 						title={''}
 						caption={'Explorer Base URL for the Optimism chain (chainID: 10).'}
-						initialValue={networks[10].lensAddress}
+						initialValue={networks[10].lensOracleAddress}
 						onSave={(value): void => {
-							if (isAddress(value)) {
-								onUpdateNetworks({10: {lensAddress: value}});
+							if (isTAddress(value)) {
+								onUpdateNetworks({10: {lensOracleAddress: value}});
 								set_nonce((n: number): number => n + 1);
 							}
 						}} />
@@ -250,10 +249,10 @@ function	SectionOracleAddress(): ReactElement {
 					<WrappedInput
 						title={''}
 						caption={'Explorer Base URL for the Fantom Opera chain (chainID: 250).'}
-						initialValue={networks[250].lensAddress}
+						initialValue={networks[250].lensOracleAddress}
 						onSave={(value): void => {
-							if (isAddress(value)) {
-								onUpdateNetworks({250: {lensAddress: value}});
+							if (isTAddress(value)) {
+								onUpdateNetworks({250: {lensOracleAddress: value}});
 								set_nonce((n: number): number => n + 1);
 							}
 						}} />
@@ -261,16 +260,16 @@ function	SectionOracleAddress(): ReactElement {
 					<WrappedInput
 						title={''}
 						caption={'Explorer Base URL for the Arbitrum chain (chainID: 42161).'}
-						initialValue={networks[42161].lensAddress}
+						initialValue={networks[42161].lensOracleAddress}
 						onSave={(value): void => {
-							if (isAddress(value)) {
-								onUpdateNetworks({42161: {lensAddress: value}});
+							if (isTAddress(value)) {
+								onUpdateNetworks({42161: {lensOracleAddress: value}});
 								set_nonce((n: number): number => n + 1);
 							}
 						}} />
 				</div>
 			</div>
-		</Card>
+		</>
 	);
 }
 
@@ -278,7 +277,7 @@ function	SectionYearnAPIBaseURI(): ReactElement {
 	const	{onUpdateBaseSettings, settings: baseAPISettings} = useSettings();
 
 	return (
-		<Card>
+		<>
 			<div className={'flex w-full flex-row justify-between pb-4'}>
 				<h4 className={'text-lg font-bold'}>{'Yearn\'s APIs'}</h4>
 			</div>
@@ -313,7 +312,7 @@ function	SectionYearnAPIBaseURI(): ReactElement {
 						})} />
 				</div>
 			</div>
-		</Card>
+		</>
 	);
 }
 
