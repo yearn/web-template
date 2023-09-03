@@ -273,54 +273,9 @@ function	SectionOracleAddress(): ReactElement {
 	);
 }
 
-function	SectionYearnAPIBaseURI(): ReactElement {
-	const	{onUpdateBaseSettings, settings: baseAPISettings} = useSettings();
-
-	return (
-		<>
-			<div className={'flex w-full flex-row justify-between pb-4'}>
-				<h4 className={'text-lg font-bold'}>{'Yearn\'s APIs'}</h4>
-			</div>
-			<div className={'text-justify'}>
-				<p>
-					{'The Yearn\'s API endpoints are used to get some specific Yearn\'s related information about the vaults, the strategies and much more.'}
-				</p>
-				<div className={'mt-4 grid grid-cols-1 gap-4'}>
-					<WrappedInput
-						title={''}
-						caption={'yDaemon API endpoint to get the list of Vaults and Strategies along with their details.'}
-						initialValue={baseAPISettings.yDaemonBaseURI}
-						onSave={(value): void => onUpdateBaseSettings({
-							...baseAPISettings,
-							yDaemonBaseURI: value
-						})} />
-					<WrappedInput
-						title={''}
-						caption={'Legacy API endpoint to get the list of Vaults and Strategies along with their details.'}
-						initialValue={baseAPISettings.apiBaseURI}
-						onSave={(value): void => onUpdateBaseSettings({
-							...baseAPISettings,
-							apiBaseURI: value
-						})} />
-					<WrappedInput
-						title={''}
-						caption={'Meta API endpoint to get the some human readable information about the vaults, strategies and protocols.'}
-						initialValue={baseAPISettings.metaBaseURI}
-						onSave={(value): void => onUpdateBaseSettings({
-							...baseAPISettings,
-							metaBaseURI: value
-						})} />
-				</div>
-			</div>
-		</>
-	);
-}
-
-
 function	DisclaimerPage(): ReactElement {
 	return (
 		<div className={'grid w-full gap-6'}>
-			<SectionYearnAPIBaseURI />
 			<SectionRPCEndpoints />
 			<SectionSubGraphEndpoints />
 			<SectionExplorerBaseURI />
